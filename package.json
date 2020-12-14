@@ -1,0 +1,19 @@
+{
+  "name": "aeserialization-purs",
+  "version": "1.0.0",
+  "description": "PS/JS bindings for aeserialization",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "blake2b": "^2.1.3",
+    "js-nacl": "^1.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

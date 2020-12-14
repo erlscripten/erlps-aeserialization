@@ -1,3 +1,6 @@
 [submodule "aeserialization"]
 	path = aeserialization
 	url = git@github.com:aeternity/aeserialization
+[submodule "erlps-stdlib"]
+	path = erlps-stdlib
+	url = git@github.com:erlscripten/erlps-stdlib

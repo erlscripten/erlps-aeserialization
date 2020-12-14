@@ -1,0 +1,3 @@
+[submodule "aeserialization"]
+	path = aeserialization
+	url = git@github.com:aeternity/aeserialization

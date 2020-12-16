@@ -1,29 +1,29 @@
 {
-  "name": "erlps-core",
+  "name": "aeserialization",
   "version": "1.0.0",
-  "description": "ERTS emulation in purescript",
+  "description": "Bindings for aeternity's aeserialization",
   "dependencies": {
-    "babel-cli": "^6.26.0",
+    "aes-js": "^3.1.2",
+    "base-x": "^3.0.8",
     "big-integer": "^1.6.48",
-    "core-js": "^3.7.0"
+    "core-js": "^3.7.0",
+    "crypto-js": "^4.0.0",
+    "regenerator-runtime": "^0.13.7",
+    "secp256k1": "^4.0.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.8",
     "@babel/core": "^7.12.7",
     "@babel/preset-env": "^7.12.7"
   },
-  "scripts": {
-    "babel": "babel es6/ffi_es6_builtins.js > src/Erlang/Builtins.js; babel es6/ffi_es6_invoke.js > src/Erlang/Invoke.js",
-    "test": "spago test"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/erlscripten/erlps-core.git"
+    "url": "git+https://github.com/erlscripten/aeserialization-purs.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/erlscripten/erlps-core/issues"
+    "url": "https://github.com/erlscripten/aeserialization-purs/issues"
   },
-  "homepage": "https://github.com/erlscripten/erlps-core#readme"
+  "homepage": "https://github.com/erlscripten/aeserialization-purs#readme"
 }

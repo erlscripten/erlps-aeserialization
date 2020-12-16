@@ -25,13 +25,16 @@ import Data.Either
 import Data.Tuple as T
 import Data.Array as A
 import Data.Maybe as M
+import Data.Traversable
 import Partial.Unsafe
 import Erlang.Type
+import Erlang.Helpers as H
 import Erlang.Exception
 import Erlang.Builtins as BIF
 import Data.BigInt as DBI
 import Erlang.Invoke
 
+import Aeser.Api.Encoder.Tests
 
 -- BEWARE - HERE BE DRAGONS - I've lost too many hours debugging alternative helpers
 -- If you think you can make a better wrapper which does not crash the testing infrastructure then please make a PR
@@ -122,8 +125,11 @@ mkInt = DBI.fromInt >>> ErlangInt
 shouldEqualOk a b = make_ok a `shouldEqual` b
 
 main :: Effect Unit
-main =
+main = unsafePartial $
     launchAff_ $ runSpec [consoleReporter] do
-      describe "aeserialization-shipped tests" do
-        it "xd" do
-          1 `shouldEqual` 1
+      describe "AeserApiEncoderTests" do
+        for_ (M.fromJust $ erlangListToList $ erlps__encode_decode_test___0 []) $
+          \(ErlangTuple [ename, ErlangFun 0 f]) -> do
+            it (M.fromJust $ H.erlangListToString ename) do
+              r <- exec_may_throw f []
+              ErlangAtom "ok" `shouldEqualOk` r

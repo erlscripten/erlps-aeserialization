@@ -331,8 +331,7 @@ erlps__decode_field__2 [(ErlangAtom "int"),
 erlps__decode_field__2 [(ErlangAtom "int"), x_0]
   | ((ErlangAtom "true") ==
        (falsifyErrors (\ _ -> (BIF.erlang__is_binary__1 [x_0])))) =
-  (BIF.do_remote_fun_call "Binary" "erlps__decode_unsigned__1"
-     [x_0])
+  (BIF.binary__decode_unsigned__1 [x_0])
 erlps__decode_field__2 [(ErlangAtom "binary"), x_0]
   | ((ErlangAtom "true") ==
        (falsifyErrors (\ _ -> (BIF.erlang__is_binary__1 [x_0])))) =

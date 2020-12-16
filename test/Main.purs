@@ -35,6 +35,8 @@ import Data.BigInt as DBI
 import Erlang.Invoke
 
 import Aeser.Api.Encoder.Tests
+import Aeser.Rlp.Tests
+import Aeser.Chain.Objects.Tests
 
 -- BEWARE - HERE BE DRAGONS - I've lost too many hours debugging alternative helpers
 -- If you think you can make a better wrapper which does not crash the testing infrastructure then please make a PR
@@ -113,9 +115,15 @@ lift_aff_to_erlang_process calc = do
 
 unpack_ok :: ErlangTerm -> Aff ErlangTerm
 unpack_ok (ErlangTuple [ErlangAtom "ok", term]) = pure term
-unpack_ok _ = do
-    1 `shouldEqual` 0
+unpack_ok e = do
+    ErlangEmptyList `shouldEqual` e
     pure ErlangEmptyList
+
+assert_ok :: ErlangTerm -> Aff Unit
+assert_ok (ErlangTuple [ErlangAtom "ok", _]) = pure unit
+assert_ok e = do
+    ErlangEmptyList `shouldEqual` e
+    pure unit
 
 make_ok term = ErlangTuple [ErlangAtom "ok", term]
 make_err = ErlangAtom "error"
@@ -133,3 +141,84 @@ main = unsafePartial $
             it (M.fromJust $ H.erlangListToString ename) do
               r <- exec_may_throw f []
               ErlangAtom "ok" `shouldEqualOk` r
+      describe "AeserRlpTests" do
+        it "erlps__rlp_one_byte_test__0" do
+            r <- exec_may_throw erlps__rlp_one_byte_test__0 []
+            assert_ok r
+        it "erlps__rlp_another_one_byte_test__0" do
+            r <- exec_may_throw erlps__rlp_another_one_byte_test__0 []
+            assert_ok r
+        it "erlps__rlp_zero_bytes_test__0" do
+            r <- exec_may_throw erlps__rlp_zero_bytes_test__0 []
+            assert_ok r
+        it "erlps__rlp_two_bytes_test__0" do
+            r <- exec_may_throw erlps__rlp_two_bytes_test__0 []
+            assert_ok r
+        it "erlps__rlp_one_byte_size_bytes_test__0" do
+            r <- exec_may_throw erlps__rlp_one_byte_size_bytes_test__0 []
+            assert_ok r
+        it "erlps__rlp_tagged_size_one_byte_bytes_test__0" do
+            r <- exec_may_throw erlps__rlp_tagged_size_one_byte_bytes_test__0 []
+            assert_ok r
+        it "erlps__rlp_tagged_size_two_bytes_bytes_test__0" do
+            r <- exec_may_throw erlps__rlp_tagged_size_two_bytes_bytes_test__0 []
+            assert_ok r
+        it "erlps__rlp_zero_bytes_list_test__0" do
+            r <- exec_may_throw erlps__rlp_zero_bytes_list_test__0 []
+            assert_ok r
+        it "erlps__rlp_one_byte_list_test__0" do
+            r <- exec_may_throw erlps__rlp_one_byte_list_test__0 []
+            assert_ok r
+        it "erlps__rlp_byte_array_list_test__0" do
+            r <- exec_may_throw erlps__rlp_byte_array_list_test__0 []
+            assert_ok r
+        it "erlps__rlp_byte_array_tagged_size_one_byte_list_test__0" do
+            r <- exec_may_throw erlps__rlp_byte_array_tagged_size_one_byte_list_test__0 []
+            assert_ok r
+        it "erlps__rlp_byte_array_tagged_size_two_bytes_list_test__0" do
+            r <- exec_may_throw erlps__rlp_byte_array_tagged_size_two_bytes_list_test__0 []
+            assert_ok r
+        it "erlps__illegal_size_encoding_list_test__0" do
+            r <- exec_may_throw erlps__illegal_size_encoding_list_test__0 []
+            assert_ok r
+        it "erlps__illegal_size_encoding_byte_array_test__0" do
+            r <- exec_may_throw erlps__illegal_size_encoding_byte_array_test__0 []
+            assert_ok r
+      describe "AeserChainObjectsTests" do
+        it "erlps__basic_test__0" do
+            r <- exec_may_throw erlps__basic_test__0 []
+            assert_ok r
+        it "erlps__basic_fail_test__0" do
+            r <- exec_may_throw erlps__basic_fail_test__0 []
+            assert_ok r
+        it "erlps__list_test__0" do
+            r <- exec_may_throw erlps__list_test__0 []
+            assert_ok r
+        it "erlps__list_fail_test__0" do
+            r <- exec_may_throw erlps__list_fail_test__0 []
+            assert_ok r
+        it "erlps__deep_list_test__0" do
+            r <- exec_may_throw erlps__deep_list_test__0 []
+            assert_ok r
+        it "erlps__deep_list_fail_test__0" do
+            r <- exec_may_throw erlps__deep_list_fail_test__0 []
+            assert_ok r
+        it "erlps__array_test__0" do
+            r <- exec_may_throw erlps__array_test__0 []
+            assert_ok r
+        it "erlps__array_fail_test__0" do
+            r <- exec_may_throw erlps__array_fail_test__0 []
+            assert_ok r
+        it "erlps__deep_array_test__0" do
+            r <- exec_may_throw erlps__deep_array_test__0 []
+            assert_ok r
+        it "erlps__deep_array_fail_test__0" do
+            r <- exec_may_throw erlps__deep_array_fail_test__0 []
+            assert_ok r
+        it "erlps__tag_fail_test__0" do
+            r <- exec_may_throw erlps__tag_fail_test__0 []
+            assert_ok r
+        it "erlps__vsn_fail_test__0" do
+            r <- exec_may_throw erlps__vsn_fail_test__0 []
+            assert_ok r
+                                                                                                                                              

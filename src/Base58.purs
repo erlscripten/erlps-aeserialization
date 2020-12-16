@@ -531,7 +531,10 @@ erlps__binary_to_base58__1 :: ErlangFun
 erlps__binary_to_base58__1 [binary_0]
   | ((ErlangAtom "true") ==
        (falsifyErrors (\ _ -> (BIF.erlang__is_binary__1 [binary_0])))) =
-  let    arg_2 = (BIF.binary__decode_unsigned__1 [binary_0])
+  let   
+    arg_2 =
+      (BIF.do_remote_fun_call "Binary" "erlps__decode_unsigned__1"
+         [binary_0])
   in let case_1 = (erlps__integer_to_base58__1 [arg_2])
   in
     case case_1 of

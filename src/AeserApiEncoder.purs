@@ -79,9 +79,13 @@ erlps__decode__1 [bin0_0] =
             (ErlangTuple [(ErlangAtom "error"), reason_15]) ->
               (BIF.erlang__error__1 [reason_15])
             something_else -> (EXC.case_clause something_else)
-      _ -> (BIF.erlang__error__1 [(ErlangAtom "missing_prefix")])
+      x_17 ->
+        let
+          arg_18 =
+            (ErlangTuple [(ErlangAtom "missing_prefix"), bin0_0, x_17])
+        in (BIF.erlang__error__1 [arg_18])
       something_else -> (EXC.case_clause something_else)
-erlps__decode__1 [arg_18] = (EXC.function_clause unit)
+erlps__decode__1 [arg_22] = (EXC.function_clause unit)
 erlps__decode__1 args =
   (EXC.badarity
      (ErlangFun 1 (\ _ -> (ErlangAtom "purs_tco_sucks"))) args)
@@ -276,8 +280,7 @@ erlps__check_str__1 [bin_0] =
     case match_expr_9 of
       (ErlangBinary bin_c_3) | size_4 <- ((DBI.fromInt 32))
                              , (BIN.Ok c_6 bin_5) <-
-                                 ((BIN.chop_int bin_c_3 size_4 1 BIN.Big
-                                     BIN.Unsigned))
+                                 ((BIN.chop_bin bin_c_3 size_4 1))
                              , (ErlangInt size_7) <- ((BIN.size bin_5))
                              , (BIN.Ok _ bin_8) <-
                                  ((BIN.chop_bin bin_5 size_7 8))

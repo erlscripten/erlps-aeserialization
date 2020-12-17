@@ -238,8 +238,7 @@ erlps__encode_field__2 [type_0, t_1]
        zipped_6)
 erlps__encode_field__2 [(ErlangAtom "int"), x_0]
   | ((isEInt x_0) && (weakGeq x_0 (ErlangInt (DBI.fromInt 0)))) =
-  (BIF.do_remote_fun_call "Binary" "erlps__encode_unsigned__1"
-     [x_0])
+  (BIF.binary__encode_unsigned__1 [x_0])
 erlps__encode_field__2 [(ErlangAtom "binary"), x_0]
   | ((ErlangAtom "true") ==
        (falsifyErrors (\ _ -> (BIF.erlang__is_binary__1 [x_0])))) =

@@ -90,10 +90,7 @@ erlps__add_size__2 [offset_0, x_1]
   | ((ErlangAtom "true") ==
        (falsifyErrors (\ _ -> (BIF.erlang__is_binary__1 [x_1])))) =
   let    arg_2 = (BIF.erlang__byte_size__1 [x_1])
-  in let
-    sizebin_4 =
-      (BIF.do_remote_fun_call "Binary" "erlps__encode_unsigned__1"
-         [arg_2])
+  in let sizebin_4 = (BIF.binary__encode_unsigned__1 [arg_2])
   in let
     lop_5 =
       (BIF.erlang__op_plus [(ErlangInt (DBI.fromInt 55)), offset_0])

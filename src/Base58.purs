@@ -517,9 +517,7 @@ erlps__base58_to_binary__1 [base58_0] =
         (ErlangInt num_3) | ((ErlangInt num_3) ==
                                (ErlangInt (DBI.fromInt 0))) ->
           (ErlangBinary (BIN.concat []))
-        n_4 ->
-          (BIF.do_remote_fun_call "Binary" "erlps__encode_unsigned__1"
-             [n_4])
+        n_4 -> (BIF.binary__encode_unsigned__1 [n_4])
         something_else -> (EXC.case_clause something_else)
   in (erlps__zeroPad__2 [base58_0, bin_6])
 erlps__base58_to_binary__1 [arg_9] = (EXC.function_clause unit)

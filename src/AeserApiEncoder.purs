@@ -265,7 +265,7 @@ erlps__split__1 [bin_0] =
          (BIN.from_int (ErlangInt (DBI.fromInt 95))
             (ErlangInt (DBI.fromInt 8)) 1 BIN.Big))
   in
-    (BIF.do_remote_fun_call "Binary" "erlps__split__3"
+    (BIF.binary__split__3
        [bin_0, (ErlangCons head_3 ErlangEmptyList), ErlangEmptyList])
 erlps__split__1 [arg_7] = (EXC.function_clause unit)
 erlps__split__1 args =

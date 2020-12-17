@@ -117,6 +117,14 @@ in  upstream
         , version =
           "master"
         }
+    with purescript-erlps-stdlib =
+        { dependencies =
+          [ "prelude", "purescript-erlps-core" ]
+        , repo =
+          "https://github.com/erlscripten/erlps-stdlib.git"
+        , version =
+          "master"
+        }
     with base58 =
         { dependencies =
           [ "prelude" ]

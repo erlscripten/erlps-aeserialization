@@ -16,6 +16,7 @@ You can edit this file as you like.
   , "numbers"
   , "psci-support"
   , "purescript-erlps-core"
+  , "purescript-erlps-stdlib"
   , "rationals"
   , "b64"
   , "spec"

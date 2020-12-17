@@ -221,4 +221,3 @@ main = unsafePartial $
         it "erlps__vsn_fail_test__0" do
             r <- exec_may_throw erlps__vsn_fail_test__0 []
             assert_ok r
-                                                                                                                                              

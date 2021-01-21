@@ -1003,7 +1003,7 @@ erlps__encode_decode_test___0 [] =
                                                                            "line"),
                                                                         (ErlangInt
                                                                            (DBI.fromInt
-                                                                              128))])
+                                                                              127))])
                                                                 in let
                                                                   tup_el_569 =
                                                                     (make_string
@@ -1099,7 +1099,7 @@ erlps__encode_decode_test___0 [] =
                                                          [(ErlangAtom "line"),
                                                           (ErlangInt
                                                              (DBI.fromInt
-                                                                134))])
+                                                                133))])
                                                   in let
                                                     tup_el_602 =
                                                       (make_string "Decoded1")

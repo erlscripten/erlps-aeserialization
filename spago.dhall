@@ -9,6 +9,7 @@ You can edit this file as you like.
   , "base58"
   , "bigints"
   , "console"
+  , "debug"
   , "effect"
   , "integers"
   , "lists"

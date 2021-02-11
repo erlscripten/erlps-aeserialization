@@ -53,168 +53,153 @@ erlps__b58char__1 [(ErlangInt num_0)]
 erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 9)) =
   toErl 65
-erlps__b58char__1 args = erlps__b58char__1__p1 args
-
-erlps__b58char__1__p1 :: ErlangFun
-erlps__b58char__1__p1 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 10)) =
   toErl 66
-erlps__b58char__1__p1 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 11)) =
   toErl 67
-erlps__b58char__1__p1 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 12)) =
   toErl 68
-erlps__b58char__1__p1 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 13)) =
   toErl 69
-erlps__b58char__1__p1 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 14)) =
   toErl 70
-erlps__b58char__1__p1 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 15)) =
   toErl 71
-erlps__b58char__1__p1 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 16)) =
   toErl 72
-erlps__b58char__1__p1 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 17)) =
   toErl 74
-erlps__b58char__1__p1 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 18)) =
   toErl 75
-erlps__b58char__1__p1 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 19)) =
   toErl 76
-erlps__b58char__1__p1 args = erlps__b58char__1__p2 args
-
-erlps__b58char__1__p2 :: ErlangFun
-erlps__b58char__1__p2 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 20)) =
   toErl 77
-erlps__b58char__1__p2 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 21)) =
   toErl 78
-erlps__b58char__1__p2 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 22)) =
   toErl 80
-erlps__b58char__1__p2 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 23)) =
   toErl 81
-erlps__b58char__1__p2 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 24)) =
   toErl 82
-erlps__b58char__1__p2 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 25)) =
   toErl 83
-erlps__b58char__1__p2 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 26)) =
   toErl 84
-erlps__b58char__1__p2 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 27)) =
   toErl 85
-erlps__b58char__1__p2 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 28)) =
   toErl 86
-erlps__b58char__1__p2 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 29)) =
   toErl 87
-erlps__b58char__1__p2 args = erlps__b58char__1__p3 args
-
-erlps__b58char__1__p3 :: ErlangFun
-erlps__b58char__1__p3 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 30)) =
   toErl 88
-erlps__b58char__1__p3 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 31)) =
   toErl 89
-erlps__b58char__1__p3 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 32)) =
   toErl 90
-erlps__b58char__1__p3 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 33)) =
   toErl 97
-erlps__b58char__1__p3 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 34)) =
   toErl 98
-erlps__b58char__1__p3 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 35)) =
   toErl 99
-erlps__b58char__1__p3 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 36)) =
   toErl 100
-erlps__b58char__1__p3 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 37)) =
   toErl 101
-erlps__b58char__1__p3 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 38)) =
   toErl 102
-erlps__b58char__1__p3 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 39)) =
   toErl 103
-erlps__b58char__1__p3 args = erlps__b58char__1__p4 args
-
-erlps__b58char__1__p4 :: ErlangFun
-erlps__b58char__1__p4 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 40)) =
   toErl 104
-erlps__b58char__1__p4 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 41)) =
   toErl 105
-erlps__b58char__1__p4 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 42)) =
   toErl 106
-erlps__b58char__1__p4 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 43)) =
   toErl 107
-erlps__b58char__1__p4 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 44)) =
   toErl 109
-erlps__b58char__1__p4 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 45)) =
   toErl 110
-erlps__b58char__1__p4 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 46)) =
   toErl 111
-erlps__b58char__1__p4 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 47)) =
   toErl 112
-erlps__b58char__1__p4 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 48)) =
   toErl 113
-erlps__b58char__1__p4 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 49)) =
   toErl 114
-erlps__b58char__1__p4 args = erlps__b58char__1__p5 args
-
-erlps__b58char__1__p5 :: ErlangFun
-erlps__b58char__1__p5 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 50)) =
   toErl 115
-erlps__b58char__1__p5 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 51)) =
   toErl 116
-erlps__b58char__1__p5 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 52)) =
   toErl 117
-erlps__b58char__1__p5 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 53)) =
   toErl 118
-erlps__b58char__1__p5 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 54)) =
   toErl 119
-erlps__b58char__1__p5 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 55)) =
   toErl 120
-erlps__b58char__1__p5 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 56)) =
   toErl 121
-erlps__b58char__1__p5 [(ErlangInt num_0)]
+erlps__b58char__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 57)) =
   toErl 122
-erlps__b58char__1__p5 [_] = ErlangAtom "error"
-erlps__b58char__1__p5 [arg_0] = EXC.function_clause unit
-erlps__b58char__1__p5 args =
+erlps__b58char__1 [_] = ErlangAtom "error"
+erlps__b58char__1 [arg_0] = EXC.function_clause unit
+erlps__b58char__1 args =
   EXC.badarity (ErlangFun 1 (\ _ -> ErlangAtom "purs_tco_sucks"))
     args
 
@@ -249,168 +234,153 @@ erlps__charb58__1 [(ErlangInt num_0)]
 erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 65)) =
   toErl 9
-erlps__charb58__1 args = erlps__charb58__1__p1 args
-
-erlps__charb58__1__p1 :: ErlangFun
-erlps__charb58__1__p1 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 66)) =
   toErl 10
-erlps__charb58__1__p1 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 67)) =
   toErl 11
-erlps__charb58__1__p1 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 68)) =
   toErl 12
-erlps__charb58__1__p1 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 69)) =
   toErl 13
-erlps__charb58__1__p1 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 70)) =
   toErl 14
-erlps__charb58__1__p1 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 71)) =
   toErl 15
-erlps__charb58__1__p1 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 72)) =
   toErl 16
-erlps__charb58__1__p1 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 74)) =
   toErl 17
-erlps__charb58__1__p1 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 75)) =
   toErl 18
-erlps__charb58__1__p1 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 76)) =
   toErl 19
-erlps__charb58__1__p1 args = erlps__charb58__1__p2 args
-
-erlps__charb58__1__p2 :: ErlangFun
-erlps__charb58__1__p2 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 77)) =
   toErl 20
-erlps__charb58__1__p2 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 78)) =
   toErl 21
-erlps__charb58__1__p2 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 80)) =
   toErl 22
-erlps__charb58__1__p2 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 81)) =
   toErl 23
-erlps__charb58__1__p2 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 82)) =
   toErl 24
-erlps__charb58__1__p2 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 83)) =
   toErl 25
-erlps__charb58__1__p2 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 84)) =
   toErl 26
-erlps__charb58__1__p2 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 85)) =
   toErl 27
-erlps__charb58__1__p2 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 86)) =
   toErl 28
-erlps__charb58__1__p2 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 87)) =
   toErl 29
-erlps__charb58__1__p2 args = erlps__charb58__1__p3 args
-
-erlps__charb58__1__p3 :: ErlangFun
-erlps__charb58__1__p3 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 88)) =
   toErl 30
-erlps__charb58__1__p3 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 89)) =
   toErl 31
-erlps__charb58__1__p3 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 90)) =
   toErl 32
-erlps__charb58__1__p3 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 97)) =
   toErl 33
-erlps__charb58__1__p3 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 98)) =
   toErl 34
-erlps__charb58__1__p3 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 99)) =
   toErl 35
-erlps__charb58__1__p3 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 100)) =
   toErl 36
-erlps__charb58__1__p3 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 101)) =
   toErl 37
-erlps__charb58__1__p3 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 102)) =
   toErl 38
-erlps__charb58__1__p3 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 103)) =
   toErl 39
-erlps__charb58__1__p3 args = erlps__charb58__1__p4 args
-
-erlps__charb58__1__p4 :: ErlangFun
-erlps__charb58__1__p4 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 104)) =
   toErl 40
-erlps__charb58__1__p4 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 105)) =
   toErl 41
-erlps__charb58__1__p4 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 106)) =
   toErl 42
-erlps__charb58__1__p4 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 107)) =
   toErl 43
-erlps__charb58__1__p4 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 109)) =
   toErl 44
-erlps__charb58__1__p4 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 110)) =
   toErl 45
-erlps__charb58__1__p4 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 111)) =
   toErl 46
-erlps__charb58__1__p4 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 112)) =
   toErl 47
-erlps__charb58__1__p4 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 113)) =
   toErl 48
-erlps__charb58__1__p4 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 114)) =
   toErl 49
-erlps__charb58__1__p4 args = erlps__charb58__1__p5 args
-
-erlps__charb58__1__p5 :: ErlangFun
-erlps__charb58__1__p5 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 115)) =
   toErl 50
-erlps__charb58__1__p5 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 116)) =
   toErl 51
-erlps__charb58__1__p5 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 117)) =
   toErl 52
-erlps__charb58__1__p5 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 118)) =
   toErl 53
-erlps__charb58__1__p5 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 119)) =
   toErl 54
-erlps__charb58__1__p5 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 120)) =
   toErl 55
-erlps__charb58__1__p5 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 121)) =
   toErl 56
-erlps__charb58__1__p5 [(ErlangInt num_0)]
+erlps__charb58__1 [(ErlangInt num_0)]
   | ((ErlangInt num_0) == (toErl 122)) =
   toErl 57
-erlps__charb58__1__p5 [_] = ErlangAtom "error"
-erlps__charb58__1__p5 [arg_0] = EXC.function_clause unit
-erlps__charb58__1__p5 args =
+erlps__charb58__1 [_] = ErlangAtom "error"
+erlps__charb58__1 [arg_0] = EXC.function_clause unit
+erlps__charb58__1 args =
   EXC.badarity (ErlangFun 1 (\ _ -> ErlangAtom "purs_tco_sucks"))
     args
 

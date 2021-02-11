@@ -313,30 +313,24 @@ erlps__type2enc__1 [(ErlangAtom "contract_bytearray")] = toErl 2
 erlps__type2enc__1 [(ErlangAtom "contract_store_key")] = toErl 2
 erlps__type2enc__1 [(ErlangAtom "contract_store_value")] =
   toErl 2
-erlps__type2enc__1 args = erlps__type2enc__1__p1 args
-
-erlps__type2enc__1__p1 :: ErlangFun
-erlps__type2enc__1__p1 [(ErlangAtom "transaction")] = toErl 2
-erlps__type2enc__1__p1 [(ErlangAtom "tx_hash")] = toErl 1
-erlps__type2enc__1__p1 [(ErlangAtom "oracle_pubkey")] = toErl 1
-erlps__type2enc__1__p1 [(ErlangAtom "oracle_query")] = toErl 2
-erlps__type2enc__1__p1 [(ErlangAtom "oracle_query_id")] = toErl 1
-erlps__type2enc__1__p1 [(ErlangAtom "oracle_response")] = toErl 2
-erlps__type2enc__1__p1 [(ErlangAtom "account_pubkey")] = toErl 1
-erlps__type2enc__1__p1 [(ErlangAtom "signature")] = toErl 1
-erlps__type2enc__1__p1 [(ErlangAtom "commitment")] = toErl 1
-erlps__type2enc__1__p1 [(ErlangAtom "peer_pubkey")] = toErl 1
-erlps__type2enc__1__p1 args = erlps__type2enc__1__p2 args
-
-erlps__type2enc__1__p2 :: ErlangFun
-erlps__type2enc__1__p2 [(ErlangAtom "name")] = toErl 1
-erlps__type2enc__1__p2 [(ErlangAtom "state")] = toErl 2
-erlps__type2enc__1__p2 [(ErlangAtom "poi")] = toErl 2
-erlps__type2enc__1__p2 [(ErlangAtom "state_trees")] = toErl 2
-erlps__type2enc__1__p2 [(ErlangAtom "call_state_tree")] = toErl 2
-erlps__type2enc__1__p2 [(ErlangAtom "bytearray")] = toErl 2
-erlps__type2enc__1__p2 [arg_0] = EXC.function_clause unit
-erlps__type2enc__1__p2 args =
+erlps__type2enc__1 [(ErlangAtom "transaction")] = toErl 2
+erlps__type2enc__1 [(ErlangAtom "tx_hash")] = toErl 1
+erlps__type2enc__1 [(ErlangAtom "oracle_pubkey")] = toErl 1
+erlps__type2enc__1 [(ErlangAtom "oracle_query")] = toErl 2
+erlps__type2enc__1 [(ErlangAtom "oracle_query_id")] = toErl 1
+erlps__type2enc__1 [(ErlangAtom "oracle_response")] = toErl 2
+erlps__type2enc__1 [(ErlangAtom "account_pubkey")] = toErl 1
+erlps__type2enc__1 [(ErlangAtom "signature")] = toErl 1
+erlps__type2enc__1 [(ErlangAtom "commitment")] = toErl 1
+erlps__type2enc__1 [(ErlangAtom "peer_pubkey")] = toErl 1
+erlps__type2enc__1 [(ErlangAtom "name")] = toErl 1
+erlps__type2enc__1 [(ErlangAtom "state")] = toErl 2
+erlps__type2enc__1 [(ErlangAtom "poi")] = toErl 2
+erlps__type2enc__1 [(ErlangAtom "state_trees")] = toErl 2
+erlps__type2enc__1 [(ErlangAtom "call_state_tree")] = toErl 2
+erlps__type2enc__1 [(ErlangAtom "bytearray")] = toErl 2
+erlps__type2enc__1 [arg_0] = EXC.function_clause unit
+erlps__type2enc__1 args =
   EXC.badarity (ErlangFun 1 (\ _ -> ErlangAtom "purs_tco_sucks"))
     args
 
@@ -381,10 +375,7 @@ erlps__type2pfx__1 [(ErlangAtom "block_state_hash")] =
       (BIN.concat
          [BIN.fromInt bin_el_0 (toErl 8) 1 BIN.Big,
           BIN.fromInt bin_el_1 (toErl 8) 1 BIN.Big])
-erlps__type2pfx__1 args = erlps__type2pfx__1__p1 args
-
-erlps__type2pfx__1__p1 :: ErlangFun
-erlps__type2pfx__1__p1 [(ErlangAtom "channel")] =
+erlps__type2pfx__1 [(ErlangAtom "channel")] =
   let    bin_el_0 = toErl 99
   in let bin_el_1 = toErl 104
   in
@@ -392,7 +383,7 @@ erlps__type2pfx__1__p1 [(ErlangAtom "channel")] =
       (BIN.concat
          [BIN.fromInt bin_el_0 (toErl 8) 1 BIN.Big,
           BIN.fromInt bin_el_1 (toErl 8) 1 BIN.Big])
-erlps__type2pfx__1__p1 [(ErlangAtom "contract_pubkey")] =
+erlps__type2pfx__1 [(ErlangAtom "contract_pubkey")] =
   let    bin_el_0 = toErl 99
   in let bin_el_1 = toErl 116
   in
@@ -400,7 +391,7 @@ erlps__type2pfx__1__p1 [(ErlangAtom "contract_pubkey")] =
       (BIN.concat
          [BIN.fromInt bin_el_0 (toErl 8) 1 BIN.Big,
           BIN.fromInt bin_el_1 (toErl 8) 1 BIN.Big])
-erlps__type2pfx__1__p1 [(ErlangAtom "contract_bytearray")] =
+erlps__type2pfx__1 [(ErlangAtom "contract_bytearray")] =
   let    bin_el_0 = toErl 99
   in let bin_el_1 = toErl 98
   in
@@ -408,7 +399,7 @@ erlps__type2pfx__1__p1 [(ErlangAtom "contract_bytearray")] =
       (BIN.concat
          [BIN.fromInt bin_el_0 (toErl 8) 1 BIN.Big,
           BIN.fromInt bin_el_1 (toErl 8) 1 BIN.Big])
-erlps__type2pfx__1__p1 [(ErlangAtom "contract_store_key")] =
+erlps__type2pfx__1 [(ErlangAtom "contract_store_key")] =
   let    bin_el_0 = toErl 99
   in let bin_el_1 = toErl 107
   in
@@ -416,7 +407,7 @@ erlps__type2pfx__1__p1 [(ErlangAtom "contract_store_key")] =
       (BIN.concat
          [BIN.fromInt bin_el_0 (toErl 8) 1 BIN.Big,
           BIN.fromInt bin_el_1 (toErl 8) 1 BIN.Big])
-erlps__type2pfx__1__p1 [(ErlangAtom "contract_store_value")] =
+erlps__type2pfx__1 [(ErlangAtom "contract_store_value")] =
   let    bin_el_0 = toErl 99
   in let bin_el_1 = toErl 118
   in
@@ -424,10 +415,7 @@ erlps__type2pfx__1__p1 [(ErlangAtom "contract_store_value")] =
       (BIN.concat
          [BIN.fromInt bin_el_0 (toErl 8) 1 BIN.Big,
           BIN.fromInt bin_el_1 (toErl 8) 1 BIN.Big])
-erlps__type2pfx__1__p1 args = erlps__type2pfx__1__p2 args
-
-erlps__type2pfx__1__p2 :: ErlangFun
-erlps__type2pfx__1__p2 [(ErlangAtom "transaction")] =
+erlps__type2pfx__1 [(ErlangAtom "transaction")] =
   let    bin_el_0 = toErl 116
   in let bin_el_1 = toErl 120
   in
@@ -435,7 +423,7 @@ erlps__type2pfx__1__p2 [(ErlangAtom "transaction")] =
       (BIN.concat
          [BIN.fromInt bin_el_0 (toErl 8) 1 BIN.Big,
           BIN.fromInt bin_el_1 (toErl 8) 1 BIN.Big])
-erlps__type2pfx__1__p2 [(ErlangAtom "tx_hash")] =
+erlps__type2pfx__1 [(ErlangAtom "tx_hash")] =
   let    bin_el_0 = toErl 116
   in let bin_el_1 = toErl 104
   in
@@ -443,7 +431,7 @@ erlps__type2pfx__1__p2 [(ErlangAtom "tx_hash")] =
       (BIN.concat
          [BIN.fromInt bin_el_0 (toErl 8) 1 BIN.Big,
           BIN.fromInt bin_el_1 (toErl 8) 1 BIN.Big])
-erlps__type2pfx__1__p2 [(ErlangAtom "oracle_pubkey")] =
+erlps__type2pfx__1 [(ErlangAtom "oracle_pubkey")] =
   let    bin_el_0 = toErl 111
   in let bin_el_1 = toErl 107
   in
@@ -451,7 +439,7 @@ erlps__type2pfx__1__p2 [(ErlangAtom "oracle_pubkey")] =
       (BIN.concat
          [BIN.fromInt bin_el_0 (toErl 8) 1 BIN.Big,
           BIN.fromInt bin_el_1 (toErl 8) 1 BIN.Big])
-erlps__type2pfx__1__p2 [(ErlangAtom "oracle_query")] =
+erlps__type2pfx__1 [(ErlangAtom "oracle_query")] =
   let    bin_el_0 = toErl 111
   in let bin_el_1 = toErl 118
   in
@@ -459,7 +447,7 @@ erlps__type2pfx__1__p2 [(ErlangAtom "oracle_query")] =
       (BIN.concat
          [BIN.fromInt bin_el_0 (toErl 8) 1 BIN.Big,
           BIN.fromInt bin_el_1 (toErl 8) 1 BIN.Big])
-erlps__type2pfx__1__p2 [(ErlangAtom "oracle_query_id")] =
+erlps__type2pfx__1 [(ErlangAtom "oracle_query_id")] =
   let    bin_el_0 = toErl 111
   in let bin_el_1 = toErl 113
   in
@@ -467,10 +455,7 @@ erlps__type2pfx__1__p2 [(ErlangAtom "oracle_query_id")] =
       (BIN.concat
          [BIN.fromInt bin_el_0 (toErl 8) 1 BIN.Big,
           BIN.fromInt bin_el_1 (toErl 8) 1 BIN.Big])
-erlps__type2pfx__1__p2 args = erlps__type2pfx__1__p3 args
-
-erlps__type2pfx__1__p3 :: ErlangFun
-erlps__type2pfx__1__p3 [(ErlangAtom "oracle_response")] =
+erlps__type2pfx__1 [(ErlangAtom "oracle_response")] =
   let    bin_el_0 = toErl 111
   in let bin_el_1 = toErl 114
   in
@@ -478,7 +463,7 @@ erlps__type2pfx__1__p3 [(ErlangAtom "oracle_response")] =
       (BIN.concat
          [BIN.fromInt bin_el_0 (toErl 8) 1 BIN.Big,
           BIN.fromInt bin_el_1 (toErl 8) 1 BIN.Big])
-erlps__type2pfx__1__p3 [(ErlangAtom "account_pubkey")] =
+erlps__type2pfx__1 [(ErlangAtom "account_pubkey")] =
   let    bin_el_0 = toErl 97
   in let bin_el_1 = toErl 107
   in
@@ -486,7 +471,7 @@ erlps__type2pfx__1__p3 [(ErlangAtom "account_pubkey")] =
       (BIN.concat
          [BIN.fromInt bin_el_0 (toErl 8) 1 BIN.Big,
           BIN.fromInt bin_el_1 (toErl 8) 1 BIN.Big])
-erlps__type2pfx__1__p3 [(ErlangAtom "signature")] =
+erlps__type2pfx__1 [(ErlangAtom "signature")] =
   let    bin_el_0 = toErl 115
   in let bin_el_1 = toErl 103
   in
@@ -494,7 +479,7 @@ erlps__type2pfx__1__p3 [(ErlangAtom "signature")] =
       (BIN.concat
          [BIN.fromInt bin_el_0 (toErl 8) 1 BIN.Big,
           BIN.fromInt bin_el_1 (toErl 8) 1 BIN.Big])
-erlps__type2pfx__1__p3 [(ErlangAtom "commitment")] =
+erlps__type2pfx__1 [(ErlangAtom "commitment")] =
   let    bin_el_0 = toErl 99
   in let bin_el_1 = toErl 109
   in
@@ -502,7 +487,7 @@ erlps__type2pfx__1__p3 [(ErlangAtom "commitment")] =
       (BIN.concat
          [BIN.fromInt bin_el_0 (toErl 8) 1 BIN.Big,
           BIN.fromInt bin_el_1 (toErl 8) 1 BIN.Big])
-erlps__type2pfx__1__p3 [(ErlangAtom "peer_pubkey")] =
+erlps__type2pfx__1 [(ErlangAtom "peer_pubkey")] =
   let    bin_el_0 = toErl 112
   in let bin_el_1 = toErl 112
   in
@@ -510,10 +495,7 @@ erlps__type2pfx__1__p3 [(ErlangAtom "peer_pubkey")] =
       (BIN.concat
          [BIN.fromInt bin_el_0 (toErl 8) 1 BIN.Big,
           BIN.fromInt bin_el_1 (toErl 8) 1 BIN.Big])
-erlps__type2pfx__1__p3 args = erlps__type2pfx__1__p4 args
-
-erlps__type2pfx__1__p4 :: ErlangFun
-erlps__type2pfx__1__p4 [(ErlangAtom "name")] =
+erlps__type2pfx__1 [(ErlangAtom "name")] =
   let    bin_el_0 = toErl 110
   in let bin_el_1 = toErl 109
   in
@@ -521,7 +503,7 @@ erlps__type2pfx__1__p4 [(ErlangAtom "name")] =
       (BIN.concat
          [BIN.fromInt bin_el_0 (toErl 8) 1 BIN.Big,
           BIN.fromInt bin_el_1 (toErl 8) 1 BIN.Big])
-erlps__type2pfx__1__p4 [(ErlangAtom "state")] =
+erlps__type2pfx__1 [(ErlangAtom "state")] =
   let    bin_el_0 = toErl 115
   in let bin_el_1 = toErl 116
   in
@@ -529,7 +511,7 @@ erlps__type2pfx__1__p4 [(ErlangAtom "state")] =
       (BIN.concat
          [BIN.fromInt bin_el_0 (toErl 8) 1 BIN.Big,
           BIN.fromInt bin_el_1 (toErl 8) 1 BIN.Big])
-erlps__type2pfx__1__p4 [(ErlangAtom "poi")] =
+erlps__type2pfx__1 [(ErlangAtom "poi")] =
   let    bin_el_0 = toErl 112
   in let bin_el_1 = toErl 105
   in
@@ -537,7 +519,7 @@ erlps__type2pfx__1__p4 [(ErlangAtom "poi")] =
       (BIN.concat
          [BIN.fromInt bin_el_0 (toErl 8) 1 BIN.Big,
           BIN.fromInt bin_el_1 (toErl 8) 1 BIN.Big])
-erlps__type2pfx__1__p4 [(ErlangAtom "state_trees")] =
+erlps__type2pfx__1 [(ErlangAtom "state_trees")] =
   let    bin_el_0 = toErl 115
   in let bin_el_1 = toErl 115
   in
@@ -545,7 +527,7 @@ erlps__type2pfx__1__p4 [(ErlangAtom "state_trees")] =
       (BIN.concat
          [BIN.fromInt bin_el_0 (toErl 8) 1 BIN.Big,
           BIN.fromInt bin_el_1 (toErl 8) 1 BIN.Big])
-erlps__type2pfx__1__p4 [(ErlangAtom "call_state_tree")] =
+erlps__type2pfx__1 [(ErlangAtom "call_state_tree")] =
   let    bin_el_0 = toErl 99
   in let bin_el_1 = toErl 115
   in
@@ -553,10 +535,7 @@ erlps__type2pfx__1__p4 [(ErlangAtom "call_state_tree")] =
       (BIN.concat
          [BIN.fromInt bin_el_0 (toErl 8) 1 BIN.Big,
           BIN.fromInt bin_el_1 (toErl 8) 1 BIN.Big])
-erlps__type2pfx__1__p4 args = erlps__type2pfx__1__p5 args
-
-erlps__type2pfx__1__p5 :: ErlangFun
-erlps__type2pfx__1__p5 [(ErlangAtom "bytearray")] =
+erlps__type2pfx__1 [(ErlangAtom "bytearray")] =
   let    bin_el_0 = toErl 98
   in let bin_el_1 = toErl 97
   in
@@ -564,8 +543,8 @@ erlps__type2pfx__1__p5 [(ErlangAtom "bytearray")] =
       (BIN.concat
          [BIN.fromInt bin_el_0 (toErl 8) 1 BIN.Big,
           BIN.fromInt bin_el_1 (toErl 8) 1 BIN.Big])
-erlps__type2pfx__1__p5 [arg_2] = EXC.function_clause unit
-erlps__type2pfx__1__p5 args =
+erlps__type2pfx__1 [arg_2] = EXC.function_clause unit
+erlps__type2pfx__1 args =
   EXC.badarity (ErlangFun 1 (\ _ -> ErlangAtom "purs_tco_sucks"))
     args
 
@@ -614,10 +593,7 @@ erlps__pfx2type__1 [(ErlangBinary binSeg_0)]
   , ((ErlangInt num_6) == (toErl 120))
   , BIN.empty bin_5 =
   ErlangAtom "block_tx_hash"
-erlps__pfx2type__1 args = erlps__pfx2type__1__p1 args
-
-erlps__pfx2type__1__p1 :: ErlangFun
-erlps__pfx2type__1__p1 [(ErlangBinary binSeg_0)]
+erlps__pfx2type__1 [(ErlangBinary binSeg_0)]
   | (ErlangInt size_1) <- (toErl 8)
   , (BIN.Ok (ErlangInt num_3) bin_2) <-
       (BIN.chopInt binSeg_0 size_1 1 BIN.Big BIN.Unsigned)
@@ -628,7 +604,7 @@ erlps__pfx2type__1__p1 [(ErlangBinary binSeg_0)]
   , ((ErlangInt num_6) == (toErl 115))
   , BIN.empty bin_5 =
   ErlangAtom "block_state_hash"
-erlps__pfx2type__1__p1 [(ErlangBinary binSeg_0)]
+erlps__pfx2type__1 [(ErlangBinary binSeg_0)]
   | (ErlangInt size_1) <- (toErl 8)
   , (BIN.Ok (ErlangInt num_3) bin_2) <-
       (BIN.chopInt binSeg_0 size_1 1 BIN.Big BIN.Unsigned)
@@ -639,7 +615,7 @@ erlps__pfx2type__1__p1 [(ErlangBinary binSeg_0)]
   , ((ErlangInt num_6) == (toErl 104))
   , BIN.empty bin_5 =
   ErlangAtom "channel"
-erlps__pfx2type__1__p1 [(ErlangBinary binSeg_0)]
+erlps__pfx2type__1 [(ErlangBinary binSeg_0)]
   | (ErlangInt size_1) <- (toErl 8)
   , (BIN.Ok (ErlangInt num_3) bin_2) <-
       (BIN.chopInt binSeg_0 size_1 1 BIN.Big BIN.Unsigned)
@@ -650,7 +626,7 @@ erlps__pfx2type__1__p1 [(ErlangBinary binSeg_0)]
   , ((ErlangInt num_6) == (toErl 98))
   , BIN.empty bin_5 =
   ErlangAtom "contract_bytearray"
-erlps__pfx2type__1__p1 [(ErlangBinary binSeg_0)]
+erlps__pfx2type__1 [(ErlangBinary binSeg_0)]
   | (ErlangInt size_1) <- (toErl 8)
   , (BIN.Ok (ErlangInt num_3) bin_2) <-
       (BIN.chopInt binSeg_0 size_1 1 BIN.Big BIN.Unsigned)
@@ -661,10 +637,7 @@ erlps__pfx2type__1__p1 [(ErlangBinary binSeg_0)]
   , ((ErlangInt num_6) == (toErl 107))
   , BIN.empty bin_5 =
   ErlangAtom "contract_store_key"
-erlps__pfx2type__1__p1 args = erlps__pfx2type__1__p2 args
-
-erlps__pfx2type__1__p2 :: ErlangFun
-erlps__pfx2type__1__p2 [(ErlangBinary binSeg_0)]
+erlps__pfx2type__1 [(ErlangBinary binSeg_0)]
   | (ErlangInt size_1) <- (toErl 8)
   , (BIN.Ok (ErlangInt num_3) bin_2) <-
       (BIN.chopInt binSeg_0 size_1 1 BIN.Big BIN.Unsigned)
@@ -675,7 +648,7 @@ erlps__pfx2type__1__p2 [(ErlangBinary binSeg_0)]
   , ((ErlangInt num_6) == (toErl 118))
   , BIN.empty bin_5 =
   ErlangAtom "contract_store_value"
-erlps__pfx2type__1__p2 [(ErlangBinary binSeg_0)]
+erlps__pfx2type__1 [(ErlangBinary binSeg_0)]
   | (ErlangInt size_1) <- (toErl 8)
   , (BIN.Ok (ErlangInt num_3) bin_2) <-
       (BIN.chopInt binSeg_0 size_1 1 BIN.Big BIN.Unsigned)
@@ -686,7 +659,7 @@ erlps__pfx2type__1__p2 [(ErlangBinary binSeg_0)]
   , ((ErlangInt num_6) == (toErl 116))
   , BIN.empty bin_5 =
   ErlangAtom "contract_pubkey"
-erlps__pfx2type__1__p2 [(ErlangBinary binSeg_0)]
+erlps__pfx2type__1 [(ErlangBinary binSeg_0)]
   | (ErlangInt size_1) <- (toErl 8)
   , (BIN.Ok (ErlangInt num_3) bin_2) <-
       (BIN.chopInt binSeg_0 size_1 1 BIN.Big BIN.Unsigned)
@@ -697,7 +670,7 @@ erlps__pfx2type__1__p2 [(ErlangBinary binSeg_0)]
   , ((ErlangInt num_6) == (toErl 120))
   , BIN.empty bin_5 =
   ErlangAtom "transaction"
-erlps__pfx2type__1__p2 [(ErlangBinary binSeg_0)]
+erlps__pfx2type__1 [(ErlangBinary binSeg_0)]
   | (ErlangInt size_1) <- (toErl 8)
   , (BIN.Ok (ErlangInt num_3) bin_2) <-
       (BIN.chopInt binSeg_0 size_1 1 BIN.Big BIN.Unsigned)
@@ -708,10 +681,7 @@ erlps__pfx2type__1__p2 [(ErlangBinary binSeg_0)]
   , ((ErlangInt num_6) == (toErl 104))
   , BIN.empty bin_5 =
   ErlangAtom "tx_hash"
-erlps__pfx2type__1__p2 args = erlps__pfx2type__1__p3 args
-
-erlps__pfx2type__1__p3 :: ErlangFun
-erlps__pfx2type__1__p3 [(ErlangBinary binSeg_0)]
+erlps__pfx2type__1 [(ErlangBinary binSeg_0)]
   | (ErlangInt size_1) <- (toErl 8)
   , (BIN.Ok (ErlangInt num_3) bin_2) <-
       (BIN.chopInt binSeg_0 size_1 1 BIN.Big BIN.Unsigned)
@@ -722,7 +692,7 @@ erlps__pfx2type__1__p3 [(ErlangBinary binSeg_0)]
   , ((ErlangInt num_6) == (toErl 107))
   , BIN.empty bin_5 =
   ErlangAtom "oracle_pubkey"
-erlps__pfx2type__1__p3 [(ErlangBinary binSeg_0)]
+erlps__pfx2type__1 [(ErlangBinary binSeg_0)]
   | (ErlangInt size_1) <- (toErl 8)
   , (BIN.Ok (ErlangInt num_3) bin_2) <-
       (BIN.chopInt binSeg_0 size_1 1 BIN.Big BIN.Unsigned)
@@ -733,7 +703,7 @@ erlps__pfx2type__1__p3 [(ErlangBinary binSeg_0)]
   , ((ErlangInt num_6) == (toErl 118))
   , BIN.empty bin_5 =
   ErlangAtom "oracle_query"
-erlps__pfx2type__1__p3 [(ErlangBinary binSeg_0)]
+erlps__pfx2type__1 [(ErlangBinary binSeg_0)]
   | (ErlangInt size_1) <- (toErl 8)
   , (BIN.Ok (ErlangInt num_3) bin_2) <-
       (BIN.chopInt binSeg_0 size_1 1 BIN.Big BIN.Unsigned)
@@ -744,7 +714,7 @@ erlps__pfx2type__1__p3 [(ErlangBinary binSeg_0)]
   , ((ErlangInt num_6) == (toErl 113))
   , BIN.empty bin_5 =
   ErlangAtom "oracle_query_id"
-erlps__pfx2type__1__p3 [(ErlangBinary binSeg_0)]
+erlps__pfx2type__1 [(ErlangBinary binSeg_0)]
   | (ErlangInt size_1) <- (toErl 8)
   , (BIN.Ok (ErlangInt num_3) bin_2) <-
       (BIN.chopInt binSeg_0 size_1 1 BIN.Big BIN.Unsigned)
@@ -755,10 +725,7 @@ erlps__pfx2type__1__p3 [(ErlangBinary binSeg_0)]
   , ((ErlangInt num_6) == (toErl 114))
   , BIN.empty bin_5 =
   ErlangAtom "oracle_response"
-erlps__pfx2type__1__p3 args = erlps__pfx2type__1__p4 args
-
-erlps__pfx2type__1__p4 :: ErlangFun
-erlps__pfx2type__1__p4 [(ErlangBinary binSeg_0)]
+erlps__pfx2type__1 [(ErlangBinary binSeg_0)]
   | (ErlangInt size_1) <- (toErl 8)
   , (BIN.Ok (ErlangInt num_3) bin_2) <-
       (BIN.chopInt binSeg_0 size_1 1 BIN.Big BIN.Unsigned)
@@ -769,7 +736,7 @@ erlps__pfx2type__1__p4 [(ErlangBinary binSeg_0)]
   , ((ErlangInt num_6) == (toErl 107))
   , BIN.empty bin_5 =
   ErlangAtom "account_pubkey"
-erlps__pfx2type__1__p4 [(ErlangBinary binSeg_0)]
+erlps__pfx2type__1 [(ErlangBinary binSeg_0)]
   | (ErlangInt size_1) <- (toErl 8)
   , (BIN.Ok (ErlangInt num_3) bin_2) <-
       (BIN.chopInt binSeg_0 size_1 1 BIN.Big BIN.Unsigned)
@@ -780,7 +747,7 @@ erlps__pfx2type__1__p4 [(ErlangBinary binSeg_0)]
   , ((ErlangInt num_6) == (toErl 103))
   , BIN.empty bin_5 =
   ErlangAtom "signature"
-erlps__pfx2type__1__p4 [(ErlangBinary binSeg_0)]
+erlps__pfx2type__1 [(ErlangBinary binSeg_0)]
   | (ErlangInt size_1) <- (toErl 8)
   , (BIN.Ok (ErlangInt num_3) bin_2) <-
       (BIN.chopInt binSeg_0 size_1 1 BIN.Big BIN.Unsigned)
@@ -791,7 +758,7 @@ erlps__pfx2type__1__p4 [(ErlangBinary binSeg_0)]
   , ((ErlangInt num_6) == (toErl 109))
   , BIN.empty bin_5 =
   ErlangAtom "commitment"
-erlps__pfx2type__1__p4 [(ErlangBinary binSeg_0)]
+erlps__pfx2type__1 [(ErlangBinary binSeg_0)]
   | (ErlangInt size_1) <- (toErl 8)
   , (BIN.Ok (ErlangInt num_3) bin_2) <-
       (BIN.chopInt binSeg_0 size_1 1 BIN.Big BIN.Unsigned)
@@ -802,10 +769,7 @@ erlps__pfx2type__1__p4 [(ErlangBinary binSeg_0)]
   , ((ErlangInt num_6) == (toErl 112))
   , BIN.empty bin_5 =
   ErlangAtom "peer_pubkey"
-erlps__pfx2type__1__p4 args = erlps__pfx2type__1__p5 args
-
-erlps__pfx2type__1__p5 :: ErlangFun
-erlps__pfx2type__1__p5 [(ErlangBinary binSeg_0)]
+erlps__pfx2type__1 [(ErlangBinary binSeg_0)]
   | (ErlangInt size_1) <- (toErl 8)
   , (BIN.Ok (ErlangInt num_3) bin_2) <-
       (BIN.chopInt binSeg_0 size_1 1 BIN.Big BIN.Unsigned)
@@ -816,7 +780,7 @@ erlps__pfx2type__1__p5 [(ErlangBinary binSeg_0)]
   , ((ErlangInt num_6) == (toErl 109))
   , BIN.empty bin_5 =
   ErlangAtom "name"
-erlps__pfx2type__1__p5 [(ErlangBinary binSeg_0)]
+erlps__pfx2type__1 [(ErlangBinary binSeg_0)]
   | (ErlangInt size_1) <- (toErl 8)
   , (BIN.Ok (ErlangInt num_3) bin_2) <-
       (BIN.chopInt binSeg_0 size_1 1 BIN.Big BIN.Unsigned)
@@ -827,7 +791,7 @@ erlps__pfx2type__1__p5 [(ErlangBinary binSeg_0)]
   , ((ErlangInt num_6) == (toErl 116))
   , BIN.empty bin_5 =
   ErlangAtom "state"
-erlps__pfx2type__1__p5 [(ErlangBinary binSeg_0)]
+erlps__pfx2type__1 [(ErlangBinary binSeg_0)]
   | (ErlangInt size_1) <- (toErl 8)
   , (BIN.Ok (ErlangInt num_3) bin_2) <-
       (BIN.chopInt binSeg_0 size_1 1 BIN.Big BIN.Unsigned)
@@ -838,7 +802,7 @@ erlps__pfx2type__1__p5 [(ErlangBinary binSeg_0)]
   , ((ErlangInt num_6) == (toErl 105))
   , BIN.empty bin_5 =
   ErlangAtom "poi"
-erlps__pfx2type__1__p5 [(ErlangBinary binSeg_0)]
+erlps__pfx2type__1 [(ErlangBinary binSeg_0)]
   | (ErlangInt size_1) <- (toErl 8)
   , (BIN.Ok (ErlangInt num_3) bin_2) <-
       (BIN.chopInt binSeg_0 size_1 1 BIN.Big BIN.Unsigned)
@@ -849,10 +813,7 @@ erlps__pfx2type__1__p5 [(ErlangBinary binSeg_0)]
   , ((ErlangInt num_6) == (toErl 115))
   , BIN.empty bin_5 =
   ErlangAtom "state_trees"
-erlps__pfx2type__1__p5 args = erlps__pfx2type__1__p6 args
-
-erlps__pfx2type__1__p6 :: ErlangFun
-erlps__pfx2type__1__p6 [(ErlangBinary binSeg_0)]
+erlps__pfx2type__1 [(ErlangBinary binSeg_0)]
   | (ErlangInt size_1) <- (toErl 8)
   , (BIN.Ok (ErlangInt num_3) bin_2) <-
       (BIN.chopInt binSeg_0 size_1 1 BIN.Big BIN.Unsigned)
@@ -863,7 +824,7 @@ erlps__pfx2type__1__p6 [(ErlangBinary binSeg_0)]
   , ((ErlangInt num_6) == (toErl 115))
   , BIN.empty bin_5 =
   ErlangAtom "call_state_tree"
-erlps__pfx2type__1__p6 [(ErlangBinary binSeg_0)]
+erlps__pfx2type__1 [(ErlangBinary binSeg_0)]
   | (ErlangInt size_1) <- (toErl 8)
   , (BIN.Ok (ErlangInt num_3) bin_2) <-
       (BIN.chopInt binSeg_0 size_1 1 BIN.Big BIN.Unsigned)
@@ -874,8 +835,8 @@ erlps__pfx2type__1__p6 [(ErlangBinary binSeg_0)]
   , ((ErlangInt num_6) == (toErl 97))
   , BIN.empty bin_5 =
   ErlangAtom "bytearray"
-erlps__pfx2type__1__p6 [arg_7] = EXC.function_clause unit
-erlps__pfx2type__1__p6 args =
+erlps__pfx2type__1 [arg_7] = EXC.function_clause unit
+erlps__pfx2type__1 args =
   EXC.badarity (ErlangFun 1 (\ _ -> ErlangAtom "purs_tco_sucks"))
     args
 

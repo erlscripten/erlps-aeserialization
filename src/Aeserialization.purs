@@ -299,26 +299,23 @@ erlps__decode_field__2 [(ErlangAtom "binary"), x_0]
   | ((ErlangAtom "true") ==
        (falsifyErrors (\ _ -> BIF.erlang__is_binary__1 [x_0]))) =
   x_0
-erlps__decode_field__2 args = erlps__decode_field__2__p1 args
-
-erlps__decode_field__2__p1 :: ErlangFun
-erlps__decode_field__2__p1 [(ErlangAtom "bool"),
-                            (ErlangBinary binSeg_0)]
+erlps__decode_field__2 [(ErlangAtom "bool"),
+                        (ErlangBinary binSeg_0)]
   | (ErlangInt size_1) <- (toErl 8)
   , (BIN.Ok (ErlangInt num_3) bin_2) <-
       (BIN.chopInt binSeg_0 size_1 1 BIN.Big BIN.Unsigned)
   , ((ErlangInt num_3) == (toErl 1))
   , BIN.empty bin_2 =
   ErlangAtom "true"
-erlps__decode_field__2__p1 [(ErlangAtom "bool"),
-                            (ErlangBinary binSeg_0)]
+erlps__decode_field__2 [(ErlangAtom "bool"),
+                        (ErlangBinary binSeg_0)]
   | (ErlangInt size_1) <- (toErl 8)
   , (BIN.Ok (ErlangInt num_3) bin_2) <-
       (BIN.chopInt binSeg_0 size_1 1 BIN.Big BIN.Unsigned)
   , ((ErlangInt num_3) == (toErl 0))
   , BIN.empty bin_2 =
   ErlangAtom "false"
-erlps__decode_field__2__p1 [(ErlangAtom "id"), val_0] =
+erlps__decode_field__2 [(ErlangAtom "id"), val_0] =
   EXC.tryCatch
     (\ _ ->
        BIF.do_remote_fun_call "Aeser.Id" "erlps__decode__1" [val_0])
@@ -330,11 +327,10 @@ erlps__decode_field__2__p1 [(ErlangAtom "id"), val_0] =
                ErlangTuple [ErlangAtom "illegal", ErlangAtom "id", val_0]
            in BIF.erlang__error__1 [arg_5]
          ex_4 -> EXC.raise ex_4)
-erlps__decode_field__2__p1 [type_0, x_1] =
+erlps__decode_field__2 [type_0, x_1] =
   let arg_2 = ErlangTuple [ErlangAtom "illegal", type_0, x_1]
   in BIF.erlang__error__1 [arg_2]
-erlps__decode_field__2__p1 [arg_6, arg_7] =
-  EXC.function_clause unit
-erlps__decode_field__2__p1 args =
+erlps__decode_field__2 [arg_6, arg_7] = EXC.function_clause unit
+erlps__decode_field__2 args =
   EXC.badarity (ErlangFun 2 (\ _ -> ErlangAtom "purs_tco_sucks"))
     args

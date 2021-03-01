@@ -44,18 +44,17 @@ erlps__rlp_one_byte_test__0 [] =
       BIF.do_remote_fun_call "Aeser.Rlp" "erlps__encode__1" [b_1]
   in
     case matchExpr_4 of
-      b_3 | (b_3 == b_1) ->
+      b_3 | b_3 == b_1 ->
         let
           match_final_5_7 =
             BIF.do_remote_fun_call "Aeser.Rlp" "erlps__decode__1" [b_1]
         in
           case match_final_5_7 of
-            b_8 | (b_8 == b_1) -> match_final_5_7
+            b_8 | b_8 == b_1 -> match_final_5_7
             _ -> EXC.badmatch match_final_5_7
       _ -> EXC.badmatch matchExpr_4
 erlps__rlp_one_byte_test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 0 erlps__rlp_one_byte_test__0) args
 
 erlps__rlp_another_one_byte_test__0 :: ErlangFun
 erlps__rlp_another_one_byte_test__0 [] =
@@ -67,17 +66,17 @@ erlps__rlp_another_one_byte_test__0 [] =
       BIF.do_remote_fun_call "Aeser.Rlp" "erlps__encode__1" [b_1]
   in
     case matchExpr_4 of
-      b_3 | (b_3 == b_1) ->
+      b_3 | b_3 == b_1 ->
         let
           match_final_5_7 =
             BIF.do_remote_fun_call "Aeser.Rlp" "erlps__decode__1" [b_1]
         in
           case match_final_5_7 of
-            b_8 | (b_8 == b_1) -> match_final_5_7
+            b_8 | b_8 == b_1 -> match_final_5_7
             _ -> EXC.badmatch match_final_5_7
       _ -> EXC.badmatch matchExpr_4
 erlps__rlp_another_one_byte_test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
+  EXC.badarity (ErlangFun 0 erlps__rlp_another_one_byte_test__0)
     args
 
 erlps__rlp_zero_bytes_test__0 :: ErlangFun
@@ -99,13 +98,12 @@ erlps__rlp_zero_bytes_test__0 [] =
                               , (BIN.Ok b_13 bin_12) <-
                                   (BIN.chopBin bin_9 size_11 8)
                               , BIN.empty bin_12
-                              , (s_10 == s_3)
-                              , (b_13 == b_0) ->
+                              , s_10 == s_3
+                              , b_13 == b_0 ->
         match_final_4_6
       _ -> EXC.badmatch match_final_4_6
 erlps__rlp_zero_bytes_test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 0 erlps__rlp_zero_bytes_test__0) args
 
 erlps__rlp_two_bytes_test__0 :: ErlangFun
 erlps__rlp_two_bytes_test__0 [] =
@@ -128,13 +126,12 @@ erlps__rlp_two_bytes_test__0 [] =
                               , (BIN.Ok b_14 bin_13) <-
                                   (BIN.chopBin bin_10 size_12 8)
                               , BIN.empty bin_13
-                              , (s_11 == s_4)
-                              , (b_14 == b_1) ->
+                              , s_11 == s_4
+                              , b_14 == b_1 ->
         match_final_5_7
       _ -> EXC.badmatch match_final_5_7
 erlps__rlp_two_bytes_test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 0 erlps__rlp_two_bytes_test__0) args
 
 erlps__rlp_one_byte_size_bytes_test__0 :: ErlangFun
 erlps__rlp_one_byte_size_bytes_test__0 [] =
@@ -166,19 +163,19 @@ erlps__rlp_one_byte_size_bytes_test__0 [] =
                                , (BIN.Ok x_19 bin_18) <-
                                    (BIN.chopBin bin_15 size_17 8)
                                , BIN.empty bin_18
-                               , (s_16 == s_3)
-                               , (x_19 == x_11) ->
+                               , s_16 == s_3
+                               , x_19 == x_11 ->
         let
           match_final_22_24 =
             BIF.do_remote_fun_call "Aeser.Rlp" "erlps__decode__1"
               [matchExpr_20]
         in
           case match_final_22_24 of
-            x_25 | (x_25 == x_11) -> match_final_22_24
+            x_25 | x_25 == x_11 -> match_final_22_24
             _ -> EXC.badmatch match_final_22_24
       _ -> EXC.badmatch matchExpr_20
 erlps__rlp_one_byte_size_bytes_test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
+  EXC.badarity (ErlangFun 0 erlps__rlp_one_byte_size_bytes_test__0)
     args
 
 erlps__rlp_tagged_size_one_byte_bytes_test__0 :: ErlangFun
@@ -212,21 +209,21 @@ erlps__rlp_tagged_size_one_byte_bytes_test__0 [] =
                                , (BIN.Ok x_22 bin_21) <-
                                    (BIN.chopBin bin_18 size_20 8)
                                , BIN.empty bin_21
-                               , (tag_16 == tag_5)
-                               , (s_19 == s_11)
-                               , (x_22 == x_9) ->
+                               , tag_16 == tag_5
+                               , s_19 == s_11
+                               , x_22 == x_9 ->
         let
           match_final_25_27 =
             BIF.do_remote_fun_call "Aeser.Rlp" "erlps__decode__1"
               [matchExpr_23]
         in
           case match_final_25_27 of
-            x_28 | (x_28 == x_9) -> match_final_25_27
+            x_28 | x_28 == x_9 -> match_final_25_27
             _ -> EXC.badmatch match_final_25_27
       _ -> EXC.badmatch matchExpr_23
 erlps__rlp_tagged_size_one_byte_bytes_test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity
+    (ErlangFun 0 erlps__rlp_tagged_size_one_byte_bytes_test__0) args
 
 erlps__rlp_tagged_size_two_bytes_bytes_test__0 :: ErlangFun
 erlps__rlp_tagged_size_two_bytes_bytes_test__0 [] =
@@ -259,20 +256,21 @@ erlps__rlp_tagged_size_two_bytes_bytes_test__0 [] =
                                , (BIN.Ok x_23 bin_22) <-
                                    (BIN.chopBin bin_19 size_21 8)
                                , BIN.empty bin_22
-                               , (tag_17 == tag_6)
-                               , (s_20 == s_12)
-                               , (x_23 == x_10) ->
+                               , tag_17 == tag_6
+                               , s_20 == s_12
+                               , x_23 == x_10 ->
         let
           match_final_26_28 =
             BIF.do_remote_fun_call "Aeser.Rlp" "erlps__decode__1"
               [matchExpr_24]
         in
           case match_final_26_28 of
-            x_29 | (x_29 == x_10) -> match_final_26_28
+            x_29 | x_29 == x_10 -> match_final_26_28
             _ -> EXC.badmatch match_final_26_28
       _ -> EXC.badmatch matchExpr_24
 erlps__rlp_tagged_size_two_bytes_bytes_test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
+  EXC.badarity
+    (ErlangFun 0 erlps__rlp_tagged_size_two_bytes_bytes_test__0)
     args
 
 erlps__rlp_zero_bytes_list_test__0 :: ErlangFun
@@ -291,18 +289,18 @@ erlps__rlp_zero_bytes_list_test__0 [] =
                                   (BIN.chopInt binSeg_6 size_7 1 BIN.Big
                                      BIN.Unsigned)
                               , BIN.empty bin_8
-                              , (tag_9 == tag_3) ->
+                              , tag_9 == tag_3 ->
         let
           match_final_12_14 =
             BIF.do_remote_fun_call "Aeser.Rlp" "erlps__decode__1"
               [matchExpr_10]
         in
           case match_final_12_14 of
-            x_15 | (x_15 == ErlangEmptyList) -> match_final_12_14
+            x_15 | x_15 == ErlangEmptyList -> match_final_12_14
             _ -> EXC.badmatch match_final_12_14
       _ -> EXC.badmatch matchExpr_10
 erlps__rlp_zero_bytes_list_test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
+  EXC.badarity (ErlangFun 0 erlps__rlp_zero_bytes_list_test__0)
     args
 
 erlps__rlp_one_byte_list_test__0 :: ErlangFun
@@ -329,21 +327,20 @@ erlps__rlp_one_byte_list_test__0 [] =
                               , (BIN.Ok (ErlangInt num_15) bin_14) <-
                                   (BIN.chopInt bin_11 size_13 1 BIN.Big
                                      BIN.Unsigned)
-                              , ((ErlangInt num_15) == (toErl 42))
+                              , (ErlangInt num_15) == (toErl 42)
                               , BIN.empty bin_14
-                              , (tag_12 == tag_3) ->
+                              , tag_12 == tag_3 ->
         let
           match_final_18_20 =
             BIF.do_remote_fun_call "Aeser.Rlp" "erlps__decode__1"
               [matchExpr_16]
         in
           case match_final_18_20 of
-            x_21 | (x_21 == x_7) -> match_final_18_20
+            x_21 | x_21 == x_7 -> match_final_18_20
             _ -> EXC.badmatch match_final_18_20
       _ -> EXC.badmatch matchExpr_16
 erlps__rlp_one_byte_list_test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 0 erlps__rlp_one_byte_list_test__0) args
 
 erlps__rlp_byte_array_list_test__0 :: ErlangFun
 erlps__rlp_byte_array_list_test__0 [] =
@@ -370,19 +367,19 @@ erlps__rlp_byte_array_list_test__0 [] =
                                , (BIN.Ok y_17 bin_16) <-
                                    (BIN.chopBin bin_13 size_15 8)
                                , BIN.empty bin_16
-                               , (tag_14 == tag_3)
-                               , (y_17 == y_9) ->
+                               , tag_14 == tag_3
+                               , y_17 == y_9 ->
         let
           match_final_20_22 =
             BIF.do_remote_fun_call "Aeser.Rlp" "erlps__decode__1"
               [matchExpr_18]
         in
           case match_final_20_22 of
-            x_23 | (x_23 == x_7) -> match_final_20_22
+            x_23 | x_23 == x_7 -> match_final_20_22
             _ -> EXC.badmatch match_final_20_22
       _ -> EXC.badmatch matchExpr_18
 erlps__rlp_byte_array_list_test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
+  EXC.badarity (ErlangFun 0 erlps__rlp_byte_array_list_test__0)
     args
 
 erlps__rlp_byte_array_tagged_size_one_byte_list_test__0 :: ErlangFun
@@ -418,20 +415,22 @@ erlps__rlp_byte_array_tagged_size_one_byte_list_test__0 [] =
                                , (BIN.Ok y_25 bin_24) <-
                                    (BIN.chopBin bin_21 size_23 8)
                                , BIN.empty bin_24
-                               , (tag_19 == tag_6)
-                               , (s_22 == s_14)
-                               , (y_25 == y_12) ->
+                               , tag_19 == tag_6
+                               , s_22 == s_14
+                               , y_25 == y_12 ->
         let
           match_final_28_30 =
             BIF.do_remote_fun_call "Aeser.Rlp" "erlps__decode__1"
               [matchExpr_26]
         in
           case match_final_28_30 of
-            x_31 | (x_31 == x_10) -> match_final_28_30
+            x_31 | x_31 == x_10 -> match_final_28_30
             _ -> EXC.badmatch match_final_28_30
       _ -> EXC.badmatch matchExpr_26
 erlps__rlp_byte_array_tagged_size_one_byte_list_test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
+  EXC.badarity
+    (ErlangFun 0
+       erlps__rlp_byte_array_tagged_size_one_byte_list_test__0)
     args
 
 erlps__rlp_byte_array_tagged_size_two_bytes_list_test__0 :: ErlangFun
@@ -467,20 +466,22 @@ erlps__rlp_byte_array_tagged_size_two_bytes_list_test__0 [] =
                                , (BIN.Ok y_25 bin_24) <-
                                    (BIN.chopBin bin_21 size_23 8)
                                , BIN.empty bin_24
-                               , (tag_19 == tag_6)
-                               , (s_22 == s_14)
-                               , (y_25 == y_12) ->
+                               , tag_19 == tag_6
+                               , s_22 == s_14
+                               , y_25 == y_12 ->
         let
           match_final_28_30 =
             BIF.do_remote_fun_call "Aeser.Rlp" "erlps__decode__1"
               [matchExpr_26]
         in
           case match_final_28_30 of
-            x_31 | (x_31 == x_10) -> match_final_28_30
+            x_31 | x_31 == x_10 -> match_final_28_30
             _ -> EXC.badmatch match_final_28_30
       _ -> EXC.badmatch matchExpr_26
 erlps__rlp_byte_array_tagged_size_two_bytes_list_test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
+  EXC.badarity
+    (ErlangFun 0
+       erlps__rlp_byte_array_tagged_size_two_bytes_list_test__0)
     args
 
 erlps__illegal_size_encoding_list_test__0 :: ErlangFun
@@ -516,16 +517,16 @@ erlps__illegal_size_encoding_list_test__0 [] =
                                , (BIN.Ok y_25 bin_24) <-
                                    (BIN.chopBin bin_21 size_23 8)
                                , BIN.empty bin_24
-                               , (tag_19 == tag_6)
-                               , (s_22 == s_14)
-                               , (y_25 == y_12) ->
+                               , tag_19 == tag_6
+                               , s_22 == s_14
+                               , y_25 == y_12 ->
         let
           matchExpr_30 =
             BIF.do_remote_fun_call "Aeser.Rlp" "erlps__decode__1"
               [matchExpr_26]
         in
           case matchExpr_30 of
-            x_29 | (x_29 == x_10) ->
+            x_29 | x_29 == x_10 ->
               let    rop_33 = toErl 1
               in let bin_el_31 = BIF.erlang__op_plus [tag_6, rop_33]
               in let bin_el_34 = toErl 0
@@ -668,8 +669,8 @@ erlps__illegal_size_encoding_list_test__0 [] =
             _ -> EXC.badmatch matchExpr_30
       _ -> EXC.badmatch matchExpr_26
 erlps__illegal_size_encoding_list_test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity
+    (ErlangFun 0 erlps__illegal_size_encoding_list_test__0) args
 
 erlps__illegal_size_encoding_byte_array_test__0 :: ErlangFun
 erlps__illegal_size_encoding_byte_array_test__0 [] =
@@ -702,16 +703,16 @@ erlps__illegal_size_encoding_byte_array_test__0 [] =
                                , (BIN.Ok x_23 bin_22) <-
                                    (BIN.chopBin bin_19 size_21 8)
                                , BIN.empty bin_22
-                               , (tag_17 == tag_6)
-                               , (s_20 == s_12)
-                               , (x_23 == x_10) ->
+                               , tag_17 == tag_6
+                               , s_20 == s_12
+                               , x_23 == x_10 ->
         let
           matchExpr_28 =
             BIF.do_remote_fun_call "Aeser.Rlp" "erlps__decode__1"
               [matchExpr_24]
         in
           case matchExpr_28 of
-            x_27 | (x_27 == x_10) ->
+            x_27 | x_27 == x_10 ->
               let    rop_31 = toErl 1
               in let bin_el_29 = BIF.erlang__op_plus [tag_6, rop_31]
               in let bin_el_32 = toErl 0
@@ -854,7 +855,8 @@ erlps__illegal_size_encoding_byte_array_test__0 [] =
             _ -> EXC.badmatch matchExpr_28
       _ -> EXC.badmatch matchExpr_24
 erlps__illegal_size_encoding_byte_array_test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
+  EXC.badarity
+    (ErlangFun 0 erlps__illegal_size_encoding_byte_array_test__0)
     args
 
 erlps__test__0 :: ErlangFun
@@ -862,5 +864,4 @@ erlps__test__0 [] =
   BIF.do_remote_fun_call "Eunit" "erlps__test__1"
     [ErlangAtom "aeser_rlp_tests"]
 erlps__test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 0 erlps__test__0) args

@@ -31,8 +31,7 @@ erlps__serialize__4 [type_0, vsn_1, template_2, fields_3] =
 erlps__serialize__4 [arg_9, arg_10, arg_11, arg_12] =
   EXC.function_clause unit
 erlps__serialize__4 args =
-  EXC.badarity (ErlangFun 4 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 4 erlps__serialize__4) args
 
 erlps__deserialize_type_and_vsn__1 :: ErlangFun
 erlps__deserialize_type_and_vsn__1 [binary_0] =
@@ -49,7 +48,7 @@ erlps__deserialize_type_and_vsn__1 [binary_0] =
 erlps__deserialize_type_and_vsn__1 [arg_10] =
   EXC.function_clause unit
 erlps__deserialize_type_and_vsn__1 args =
-  EXC.badarity (ErlangFun 1 (\ _ -> ErlangAtom "purs_tco_sucks"))
+  EXC.badarity (ErlangFun 1 erlps__deserialize_type_and_vsn__1)
     args
 
 erlps__deserialize__4 :: ErlangFun
@@ -61,8 +60,7 @@ erlps__deserialize__4 [type_0, vsn_1, template_2, binary_3] =
 erlps__deserialize__4 [arg_10, arg_11, arg_12, arg_13] =
   EXC.function_clause unit
 erlps__deserialize__4 args =
-  EXC.badarity (ErlangFun 4 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 4 erlps__deserialize__4) args
 
 erlps__tag__1 :: ErlangFun
 erlps__tag__1 [(ErlangAtom "account")] = toErl 10
@@ -135,182 +133,180 @@ erlps__tag__1 [(ErlangAtom "light_micro_block")] = toErl 102
 erlps__tag__1 [(ErlangAtom "pof")] = toErl 200
 erlps__tag__1 [arg_0] = EXC.function_clause unit
 erlps__tag__1 args =
-  EXC.badarity (ErlangFun 1 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 1 erlps__tag__1) args
 
 erlps__rev_tag__1 :: ErlangFun
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 10)) =
+  | (ErlangInt num_0) == (toErl 10) =
   ErlangAtom "account"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 11)) =
+  | (ErlangInt num_0) == (toErl 11) =
   ErlangAtom "signed_tx"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 12)) =
+  | (ErlangInt num_0) == (toErl 12) =
   ErlangAtom "spend_tx"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 20)) =
+  | (ErlangInt num_0) == (toErl 20) =
   ErlangAtom "oracle"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 21)) =
+  | (ErlangInt num_0) == (toErl 21) =
   ErlangAtom "oracle_query"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 22)) =
+  | (ErlangInt num_0) == (toErl 22) =
   ErlangAtom "oracle_register_tx"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 23)) =
+  | (ErlangInt num_0) == (toErl 23) =
   ErlangAtom "oracle_query_tx"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 24)) =
+  | (ErlangInt num_0) == (toErl 24) =
   ErlangAtom "oracle_response_tx"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 25)) =
+  | (ErlangInt num_0) == (toErl 25) =
   ErlangAtom "oracle_extend_tx"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 30)) =
+  | (ErlangInt num_0) == (toErl 30) =
   ErlangAtom "name"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 31)) =
+  | (ErlangInt num_0) == (toErl 31) =
   ErlangAtom "name_commitment"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 32)) =
+  | (ErlangInt num_0) == (toErl 32) =
   ErlangAtom "name_claim_tx"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 33)) =
+  | (ErlangInt num_0) == (toErl 33) =
   ErlangAtom "name_preclaim_tx"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 34)) =
+  | (ErlangInt num_0) == (toErl 34) =
   ErlangAtom "name_update_tx"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 35)) =
+  | (ErlangInt num_0) == (toErl 35) =
   ErlangAtom "name_revoke_tx"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 36)) =
+  | (ErlangInt num_0) == (toErl 36) =
   ErlangAtom "name_transfer_tx"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 37)) =
+  | (ErlangInt num_0) == (toErl 37) =
   ErlangAtom "name_auction"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 40)) =
+  | (ErlangInt num_0) == (toErl 40) =
   ErlangAtom "contract"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 41)) =
+  | (ErlangInt num_0) == (toErl 41) =
   ErlangAtom "contract_call"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 42)) =
+  | (ErlangInt num_0) == (toErl 42) =
   ErlangAtom "contract_create_tx"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 43)) =
+  | (ErlangInt num_0) == (toErl 43) =
   ErlangAtom "contract_call_tx"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 50)) =
+  | (ErlangInt num_0) == (toErl 50) =
   ErlangAtom "channel_create_tx"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 51)) =
+  | (ErlangInt num_0) == (toErl 51) =
   ErlangAtom "channel_deposit_tx"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 52)) =
+  | (ErlangInt num_0) == (toErl 52) =
   ErlangAtom "channel_withdraw_tx"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 521)) =
+  | (ErlangInt num_0) == (toErl 521) =
   ErlangAtom "channel_force_progress_tx"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 53)) =
+  | (ErlangInt num_0) == (toErl 53) =
   ErlangAtom "channel_close_mutual_tx"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 54)) =
+  | (ErlangInt num_0) == (toErl 54) =
   ErlangAtom "channel_close_solo_tx"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 55)) =
+  | (ErlangInt num_0) == (toErl 55) =
   ErlangAtom "channel_slash_tx"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 56)) =
+  | (ErlangInt num_0) == (toErl 56) =
   ErlangAtom "channel_settle_tx"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 57)) =
+  | (ErlangInt num_0) == (toErl 57) =
   ErlangAtom "channel_offchain_tx"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 570)) =
+  | (ErlangInt num_0) == (toErl 570) =
   ErlangAtom "channel_offchain_update_transfer"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 571)) =
+  | (ErlangInt num_0) == (toErl 571) =
   ErlangAtom "channel_offchain_update_deposit"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 572)) =
+  | (ErlangInt num_0) == (toErl 572) =
   ErlangAtom "channel_offchain_update_withdraw"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 573)) =
+  | (ErlangInt num_0) == (toErl 573) =
   ErlangAtom "channel_offchain_update_create_contract"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 574)) =
+  | (ErlangInt num_0) == (toErl 574) =
   ErlangAtom "channel_offchain_update_call_contract"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 576)) =
+  | (ErlangInt num_0) == (toErl 576) =
   ErlangAtom "channel_offchain_update_meta"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 575)) =
+  | (ErlangInt num_0) == (toErl 575) =
   ErlangAtom "channel_client_reconnect_tx"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 58)) =
+  | (ErlangInt num_0) == (toErl 58) =
   ErlangAtom "channel"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 59)) =
+  | (ErlangInt num_0) == (toErl 59) =
   ErlangAtom "channel_snapshot_solo_tx"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 60)) =
+  | (ErlangInt num_0) == (toErl 60) =
   ErlangAtom "trees_poi"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 61)) =
+  | (ErlangInt num_0) == (toErl 61) =
   ErlangAtom "trees_db"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 62)) =
+  | (ErlangInt num_0) == (toErl 62) =
   ErlangAtom "state_trees"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 63)) =
+  | (ErlangInt num_0) == (toErl 63) =
   ErlangAtom "mtree"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 64)) =
+  | (ErlangInt num_0) == (toErl 64) =
   ErlangAtom "mtree_value"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 621)) =
+  | (ErlangInt num_0) == (toErl 621) =
   ErlangAtom "contracts_mtree"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 622)) =
+  | (ErlangInt num_0) == (toErl 622) =
   ErlangAtom "calls_mtree"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 623)) =
+  | (ErlangInt num_0) == (toErl 623) =
   ErlangAtom "channels_mtree"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 624)) =
+  | (ErlangInt num_0) == (toErl 624) =
   ErlangAtom "nameservice_mtree"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 625)) =
+  | (ErlangInt num_0) == (toErl 625) =
   ErlangAtom "oracles_mtree"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 626)) =
+  | (ErlangInt num_0) == (toErl 626) =
   ErlangAtom "accounts_mtree"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 70)) =
+  | (ErlangInt num_0) == (toErl 70) =
   ErlangAtom "compiler_sophia"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 80)) =
+  | (ErlangInt num_0) == (toErl 80) =
   ErlangAtom "ga_attach_tx"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 81)) =
+  | (ErlangInt num_0) == (toErl 81) =
   ErlangAtom "ga_meta_tx"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 100)) =
+  | (ErlangInt num_0) == (toErl 100) =
   ErlangAtom "key_block"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 101)) =
+  | (ErlangInt num_0) == (toErl 101) =
   ErlangAtom "micro_block"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 102)) =
+  | (ErlangInt num_0) == (toErl 102) =
   ErlangAtom "light_micro_block"
 erlps__rev_tag__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 200)) =
+  | (ErlangInt num_0) == (toErl 200) =
   ErlangAtom "pof"
 erlps__rev_tag__1 [arg_1] = EXC.function_clause unit
 erlps__rev_tag__1 args =
-  EXC.badarity (ErlangFun 1 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 1 erlps__rev_tag__1) args

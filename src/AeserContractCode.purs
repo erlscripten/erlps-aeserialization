@@ -27,8 +27,7 @@ erlps__serialize__1 [codemap_0] =
   in erlps__serialize__2 [codemap_0, arg_2]
 erlps__serialize__1 [arg_3] = EXC.function_clause unit
 erlps__serialize__1 args =
-  EXC.badarity (ErlangFun 1 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 1 erlps__serialize__1) args
 
 erlps__serialize__2 :: ErlangFun
 erlps__serialize__2 [codemap_3@(ErlangMap map_0),
@@ -57,89 +56,70 @@ erlps__serialize__2 [codemap_3@(ErlangMap map_0),
               (ErlangTuple [(ErlangAtom "ok"), shash_13]) -> shash_13
               _ -> EXC.badmatch matchExpr_14
         something_else -> EXC.case_clause something_else
-  in let bin_el_19 = toErl 117
-  in let bin_el_20 = toErl 110
-  in let bin_el_21 = toErl 107
-  in let bin_el_22 = toErl 110
-  in let bin_el_23 = toErl 111
-  in let bin_el_24 = toErl 119
-  in let bin_el_25 = toErl 110
   in let
     arg_18 =
-      ErlangBinary
-        (BIN.concat
-           [BIN.fromInt bin_el_19 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_20 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_21 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_22 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_23 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_24 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_25 (toErl 8) 1 BIN.Big])
+      ErlangBinary (BIN.fromInts (toErl "unknown") (toErl 8) 1 BIN.Big)
   in let
-    version_26 =
+    version_19 =
       BIF.do_remote_fun_call "Maps" "erlps__get__3"
         [ErlangAtom "compiler_version", codemap_3, arg_18]
   in let
-    binversion_29 =
+    binversion_21 =
       case ErlangAtom "true" of
-        _ | isEInt version_26 ->
-          BIF.erlang__integer_to_binary__1 [version_26]
-        _ | ((ErlangAtom "true") ==
-               (falsifyErrors
-                  (\ _ -> BIF.erlang__is_binary__1 [version_26]))) ->
-          version_26
+        _ | isEInt version_19 ->
+          BIF.erlang__integer_to_binary__1 [version_19]
+        _ | isEBinary version_19 -> version_19
         _ -> EXC.if_clause unit
   in let
-    payable_33 =
+    payable_25 =
       BIF.do_remote_fun_call "Maps" "erlps__get__3"
         [ErlangAtom "payable", codemap_3, ErlangAtom "true"]
   in let
-    head_35 = ErlangTuple [ErlangAtom "source_hash", sourcehash_15]
-  in let head_39 = ErlangTuple [ErlangAtom "type_info", typeinfo_2]
-  in let head_43 = ErlangTuple [ErlangAtom "byte_code", bytecode_1]
-  in let rop_51 = toErl 1
+    head_27 = ErlangTuple [ErlangAtom "source_hash", sourcehash_15]
+  in let head_31 = ErlangTuple [ErlangAtom "type_info", typeinfo_2]
+  in let head_35 = ErlangTuple [ErlangAtom "byte_code", bytecode_1]
+  in let rop_43 = toErl 1
   in let
-    cond_49 =
-      BIF.erlang__op_greater [sophiacontractversion_4, rop_51]
+    cond_41 =
+      BIF.erlang__op_greater [sophiacontractversion_4, rop_43]
   in let
-    lop_48 =
-      case cond_49 of
+    lop_40 =
+      case cond_41 of
         (ErlangAtom "true") ->
           let
-            lcRet_52 =
-              ErlangTuple [ErlangAtom "compiler_version", binversion_29]
-          in ErlangCons lcRet_52 ErlangEmptyList
+            lcRet_44 =
+              ErlangTuple [ErlangAtom "compiler_version", binversion_21]
+          in ErlangCons lcRet_44 ErlangEmptyList
         _ -> ErlangEmptyList
-  in let rop_58 = toErl 2
+  in let rop_50 = toErl 2
   in let
-    cond_56 =
-      BIF.erlang__op_greater [sophiacontractversion_4, rop_58]
+    cond_48 =
+      BIF.erlang__op_greater [sophiacontractversion_4, rop_50]
   in let
-    rop_55 =
-      case cond_56 of
+    rop_47 =
+      case cond_48 of
         (ErlangAtom "true") ->
-          let lcRet_59 = ErlangTuple [ErlangAtom "payable", payable_33]
-          in ErlangCons lcRet_59 ErlangEmptyList
+          let lcRet_51 = ErlangTuple [ErlangAtom "payable", payable_25]
+          in ErlangCons lcRet_51 ErlangEmptyList
         _ -> ErlangEmptyList
-  in let rop_47 = BIF.erlang__op_append [lop_48, rop_55]
+  in let rop_39 = BIF.erlang__op_append [lop_40, rop_47]
   in let
-    fields_62 =
+    fields_54 =
       BIF.erlang__op_append
-        [ErlangCons head_35
-           (ErlangCons head_39 (ErlangCons head_43 ErlangEmptyList)),
-         rop_47]
+        [ErlangCons head_27
+           (ErlangCons head_31 (ErlangCons head_35 ErlangEmptyList)),
+         rop_39]
   in let
-    arg_65 =
+    arg_57 =
       erlps__serialization_template__1 [sophiacontractversion_4]
   in
     BIF.do_remote_fun_call "Aeser.Chain.Objects"
       "erlps__serialize__4"
-      [ErlangAtom "compiler_sophia", sophiacontractversion_4, arg_65,
-       fields_62]
-erlps__serialize__2 [arg_68, arg_69] = EXC.function_clause unit
+      [ErlangAtom "compiler_sophia", sophiacontractversion_4, arg_57,
+       fields_54]
+erlps__serialize__2 [arg_60, arg_61] = EXC.function_clause unit
 erlps__serialize__2 args =
-  EXC.badarity (ErlangFun 2 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 2 erlps__serialize__2) args
 
 erlps__deserialize__1 :: ErlangFun
 erlps__deserialize__1 [binary_0] =
@@ -150,8 +130,8 @@ erlps__deserialize__1 [binary_0] =
   in
     case case_1 of
       (ErlangTuple [type_3@(ErlangAtom "compiler_sophia"),
-                    vsn_5@(ErlangInt num_4), _rest_6]) | ((ErlangInt num_4) ==
-                                                            (toErl 1)) ->
+                    vsn_5@(ErlangInt num_4), _rest_6]) | (ErlangInt num_4) ==
+                                                           (toErl 1) ->
         let    template_8 = erlps__serialization_template__1 [vsn_5]
         in let
           matchExpr_16 =
@@ -172,9 +152,9 @@ erlps__deserialize__1 [binary_0] =
                     DT.Tuple (ErlangAtom "payable") (ErlangAtom "true")])
             _ -> EXC.badmatch matchExpr_16
       (ErlangTuple [type_27@(ErlangAtom "compiler_sophia"),
-                    vsn_29@(ErlangInt num_28), _rest_30]) | ((ErlangInt
-                                                                num_28) ==
-                                                               (toErl 2)) ->
+                    vsn_29@(ErlangInt num_28), _rest_30]) | (ErlangInt
+                                                               num_28) ==
+                                                              (toErl 2) ->
         let    template_32 = erlps__serialization_template__1 [vsn_29]
         in let
           matchExpr_41 =
@@ -197,9 +177,9 @@ erlps__deserialize__1 [binary_0] =
                     DT.Tuple (ErlangAtom "payable") (ErlangAtom "true")])
             _ -> EXC.badmatch matchExpr_41
       (ErlangTuple [type_54@(ErlangAtom "compiler_sophia"),
-                    vsn_56@(ErlangInt num_55), _rest_57]) | ((ErlangInt
-                                                                num_55) ==
-                                                               (toErl 3)) ->
+                    vsn_56@(ErlangInt num_55), _rest_57]) | (ErlangInt
+                                                               num_55) ==
+                                                              (toErl 3) ->
         let    template_59 = erlps__serialization_template__1 [vsn_56]
         in let
           matchExpr_69 =
@@ -228,12 +208,11 @@ erlps__deserialize__1 [binary_0] =
         in BIF.erlang__error__1 [arg_83]
 erlps__deserialize__1 [arg_86] = EXC.function_clause unit
 erlps__deserialize__1 args =
-  EXC.badarity (ErlangFun 1 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 1 erlps__deserialize__1) args
 
 erlps__serialization_template__1 :: ErlangFun
 erlps__serialization_template__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 1)) =
+  | (ErlangInt num_0) == (toErl 1) =
   let   
     head_1 =
       ErlangTuple [ErlangAtom "source_hash", ErlangAtom "binary"]
@@ -253,7 +232,7 @@ erlps__serialization_template__1 [(ErlangInt num_0)]
     ErlangCons head_1
       (ErlangCons head_5 (ErlangCons head_15 ErlangEmptyList))
 erlps__serialization_template__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 2)) =
+  | (ErlangInt num_0) == (toErl 2) =
   let   
     head_1 =
       ErlangTuple [ErlangAtom "source_hash", ErlangAtom "binary"]
@@ -277,7 +256,7 @@ erlps__serialization_template__1 [(ErlangInt num_0)]
       (ErlangCons head_5
          (ErlangCons head_15 (ErlangCons head_19 ErlangEmptyList)))
 erlps__serialization_template__1 [(ErlangInt num_0)]
-  | ((ErlangInt num_0) == (toErl 3)) =
+  | (ErlangInt num_0) == (toErl 3) =
   let   
     head_1 =
       ErlangTuple [ErlangAtom "source_hash", ErlangAtom "binary"]
@@ -306,5 +285,4 @@ erlps__serialization_template__1 [(ErlangInt num_0)]
 erlps__serialization_template__1 [arg_28] =
   EXC.function_clause unit
 erlps__serialization_template__1 args =
-  EXC.badarity (ErlangFun 1 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 1 erlps__serialization_template__1) args

@@ -60,9 +60,9 @@ erlps__basic_test__0 [] =
                     arg_24]
              in
                case case_22 of
-                 __x_27 | (__x_27 ==
-                             (ErlangCons head_9
-                                (ErlangCons head_13 ErlangEmptyList))) ->
+                 __x_27 | __x_27 ==
+                            (ErlangCons head_9
+                               (ErlangCons head_13 ErlangEmptyList)) ->
                    ErlangAtom "ok"
                  __v_28 ->
                    let   
@@ -100,8 +100,7 @@ erlps__basic_test__0 [] =
          in lambda_20)
   in BIF.erlang__apply__2 [fun_19, ErlangEmptyList]
 erlps__basic_test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 0 erlps__basic_test__0) args
 
 erlps__basic_fail_test__0 :: ErlangFun
 erlps__basic_fail_test__0 [] =
@@ -209,8 +208,7 @@ erlps__basic_fail_test__0 [] =
          in lambda_19)
   in BIF.erlang__apply__2 [fun_18, ErlangEmptyList]
 erlps__basic_fail_test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 0 erlps__basic_fail_test__0) args
 
 erlps__list_test__0 :: ErlangFun
 erlps__list_test__0 [] =
@@ -266,10 +264,10 @@ erlps__list_test__0 [] =
                     arg_45]
              in
                case case_43 of
-                 __x_48 | (__x_48 ==
-                             (ErlangCons head_19
-                                (ErlangCons head_25
-                                   (ErlangCons head_35 ErlangEmptyList)))) ->
+                 __x_48 | __x_48 ==
+                            (ErlangCons head_19
+                               (ErlangCons head_25
+                                  (ErlangCons head_35 ErlangEmptyList))) ->
                    ErlangAtom "ok"
                  __v_49 ->
                    let   
@@ -308,8 +306,7 @@ erlps__list_test__0 [] =
          in lambda_41)
   in BIF.erlang__apply__2 [fun_40, ErlangEmptyList]
 erlps__list_test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 0 erlps__list_test__0) args
 
 erlps__list_fail_test__0 :: ErlangFun
 erlps__list_fail_test__0 [] =
@@ -434,8 +431,7 @@ erlps__list_fail_test__0 [] =
          in lambda_30)
   in BIF.erlang__apply__2 [fun_29, ErlangEmptyList]
 erlps__list_fail_test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 0 erlps__list_fail_test__0) args
 
 erlps__deep_list_test__0 :: ErlangFun
 erlps__deep_list_test__0 [] =
@@ -496,9 +492,9 @@ erlps__deep_list_test__0 [] =
                     arg_52]
              in
                case case_50 of
-                 __x_55 | (__x_55 ==
-                             (ErlangCons head_23
-                                (ErlangCons head_31 ErlangEmptyList))) ->
+                 __x_55 | __x_55 ==
+                            (ErlangCons head_23
+                               (ErlangCons head_31 ErlangEmptyList)) ->
                    ErlangAtom "ok"
                  __v_56 ->
                    let   
@@ -536,8 +532,7 @@ erlps__deep_list_test__0 [] =
          in lambda_48)
   in BIF.erlang__apply__2 [fun_47, ErlangEmptyList]
 erlps__deep_list_test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 0 erlps__deep_list_test__0) args
 
 erlps__deep_list_fail_test__0 :: ErlangFun
 erlps__deep_list_fail_test__0 [] =
@@ -679,8 +674,7 @@ erlps__deep_list_fail_test__0 [] =
          in lambda_47)
   in BIF.erlang__apply__2 [fun_46, ErlangEmptyList]
 erlps__deep_list_fail_test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 0 erlps__deep_list_fail_test__0) args
 
 erlps__array_test__0 :: ErlangFun
 erlps__array_test__0 [] =
@@ -694,100 +688,92 @@ erlps__array_test__0 [] =
   in let tup_el_16 = ErlangTuple [ErlangAtom "int"]
   in let head_14 = ErlangTuple [ErlangAtom "baz", tup_el_16]
   in let tup_el_23 = toErl 1
-  in let bin_el_25 = toErl 102
-  in let bin_el_26 = toErl 111
-  in let bin_el_27 = toErl 111
   in let
     tup_el_24 =
-      ErlangBinary
-        (BIN.concat
-           [BIN.fromInt bin_el_25 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_26 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_27 (toErl 8) 1 BIN.Big])
+      ErlangBinary (BIN.fromInts (toErl "foo") (toErl 8) 1 BIN.Big)
   in let tup_el_22 = ErlangTuple [tup_el_23, tup_el_24]
   in let head_20 = ErlangTuple [ErlangAtom "foo", tup_el_22]
-  in let tup_el_33 = toErl 1
-  in let tup_el_34 = toErl 2
-  in let head_32 = ErlangTuple [tup_el_33, tup_el_34]
-  in let tup_el_37 = toErl 3
-  in let tup_el_38 = toErl 4
-  in let head_36 = ErlangTuple [tup_el_37, tup_el_38]
-  in let tup_el_41 = toErl 5
-  in let tup_el_42 = toErl 6
-  in let head_40 = ErlangTuple [tup_el_41, tup_el_42]
+  in let tup_el_30 = toErl 1
+  in let tup_el_31 = toErl 2
+  in let head_29 = ErlangTuple [tup_el_30, tup_el_31]
+  in let tup_el_34 = toErl 3
+  in let tup_el_35 = toErl 4
+  in let head_33 = ErlangTuple [tup_el_34, tup_el_35]
+  in let tup_el_38 = toErl 5
+  in let tup_el_39 = toErl 6
+  in let head_37 = ErlangTuple [tup_el_38, tup_el_39]
   in let
-    head_29 =
+    head_26 =
       ErlangTuple
         [ErlangAtom "bar",
-         ErlangCons head_32
-           (ErlangCons head_36 (ErlangCons head_40 ErlangEmptyList))]
-  in let tup_el_48 = toErl 1
-  in let tup_el_47 = ErlangTuple [tup_el_48]
-  in let head_45 = ErlangTuple [ErlangAtom "baz", tup_el_47]
+         ErlangCons head_29
+           (ErlangCons head_33 (ErlangCons head_37 ErlangEmptyList))]
+  in let tup_el_45 = toErl 1
+  in let tup_el_44 = ErlangTuple [tup_el_45]
+  in let head_42 = ErlangTuple [ErlangAtom "baz", tup_el_44]
   in let
-    fun_51 =
+    fun_48 =
       ErlangFun 0
         (let
-           lambda_52 [] =
+           lambda_49 [] =
              let   
-               arg_56 =
+               arg_53 =
                  erlps__serialize__2
                    [ErlangCons head_0
                       (ErlangCons head_6 (ErlangCons head_14 ErlangEmptyList)),
                     ErlangCons head_20
-                      (ErlangCons head_29 (ErlangCons head_45 ErlangEmptyList))]
+                      (ErlangCons head_26 (ErlangCons head_42 ErlangEmptyList))]
              in let
-               case_54 =
+               case_51 =
                  erlps__deserialize__2
                    [ErlangCons head_0
                       (ErlangCons head_6 (ErlangCons head_14 ErlangEmptyList)),
-                    arg_56]
+                    arg_53]
              in
-               case case_54 of
-                 __x_59 | (__x_59 ==
-                             (ErlangCons head_20
-                                (ErlangCons head_29
-                                   (ErlangCons head_45 ErlangEmptyList)))) ->
+               case case_51 of
+                 __x_56 | __x_56 ==
+                            (ErlangCons head_20
+                               (ErlangCons head_26
+                                  (ErlangCons head_42 ErlangEmptyList))) ->
                    ErlangAtom "ok"
-                 __v_60 ->
+                 __v_57 ->
                    let   
-                     head_64 =
+                     head_61 =
                        ErlangTuple
                          [ErlangAtom "module",
                           ErlangAtom "aeser_chain_objects_tests"]
-                   in let tup_el_70 = toErl 48
-                   in let head_68 = ErlangTuple [ErlangAtom "line", tup_el_70]
+                   in let tup_el_67 = toErl 48
+                   in let head_65 = ErlangTuple [ErlangAtom "line", tup_el_67]
                    in let
-                     tup_el_74 =
+                     tup_el_71 =
                        toErl
                          "deserialize ( Template , serialize ( Template , Values ) )"
                    in let
-                     head_72 = ErlangTuple [ErlangAtom "expression", tup_el_74]
+                     head_69 = ErlangTuple [ErlangAtom "expression", tup_el_71]
                    in let
-                     head_76 =
+                     head_73 =
                        ErlangTuple
                          [ErlangAtom "expected",
                           ErlangCons head_20
-                            (ErlangCons head_29
-                               (ErlangCons head_45 ErlangEmptyList))]
-                   in let head_80 = ErlangTuple [ErlangAtom "value", __v_60]
+                            (ErlangCons head_26
+                               (ErlangCons head_42 ErlangEmptyList))]
+                   in let head_77 = ErlangTuple [ErlangAtom "value", __v_57]
                    in let
-                     arg_61 =
+                     arg_58 =
                        ErlangTuple
                          [ErlangAtom "assertEqual",
-                          ErlangCons head_64
-                            (ErlangCons head_68
-                               (ErlangCons head_72
-                                  (ErlangCons head_76
-                                     (ErlangCons head_80 ErlangEmptyList))))]
-                   in BIF.erlang__error__1 [arg_61]
-           lambda_52 [] = EXC.function_clause unit
-           lambda_52 args = EXC.badarity (ErlangFun 0 lambda_52) args
-         in lambda_52)
-  in BIF.erlang__apply__2 [fun_51, ErlangEmptyList]
+                          ErlangCons head_61
+                            (ErlangCons head_65
+                               (ErlangCons head_69
+                                  (ErlangCons head_73
+                                     (ErlangCons head_77 ErlangEmptyList))))]
+                   in BIF.erlang__error__1 [arg_58]
+           lambda_49 [] = EXC.function_clause unit
+           lambda_49 args = EXC.badarity (ErlangFun 0 lambda_49) args
+         in lambda_49)
+  in BIF.erlang__apply__2 [fun_48, ErlangEmptyList]
 erlps__array_test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 0 erlps__array_test__0) args
 
 erlps__array_fail_test__0 :: ErlangFun
 erlps__array_fail_test__0 [] =
@@ -801,143 +787,135 @@ erlps__array_fail_test__0 [] =
   in let tup_el_16 = ErlangTuple [ErlangAtom "int"]
   in let head_14 = ErlangTuple [ErlangAtom "baz", tup_el_16]
   in let tup_el_23 = toErl 1
-  in let bin_el_25 = toErl 102
-  in let bin_el_26 = toErl 111
-  in let bin_el_27 = toErl 111
   in let
     tup_el_24 =
-      ErlangBinary
-        (BIN.concat
-           [BIN.fromInt bin_el_25 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_26 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_27 (toErl 8) 1 BIN.Big])
+      ErlangBinary (BIN.fromInts (toErl "foo") (toErl 8) 1 BIN.Big)
   in let tup_el_22 = ErlangTuple [tup_el_23, tup_el_24]
   in let head_20 = ErlangTuple [ErlangAtom "foo", tup_el_22]
-  in let tup_el_33 = toErl 1
-  in let tup_el_34 = toErl 2
-  in let head_32 = ErlangTuple [tup_el_33, tup_el_34]
-  in let tup_el_37 = toErl 3
-  in let tup_el_38 = toErl 4
-  in let head_36 = ErlangTuple [tup_el_37, tup_el_38]
-  in let tup_el_41 = toErl 5
-  in let tup_el_42 = toErl 6
-  in let head_40 = ErlangTuple [tup_el_41, tup_el_42]
+  in let tup_el_30 = toErl 1
+  in let tup_el_31 = toErl 2
+  in let head_29 = ErlangTuple [tup_el_30, tup_el_31]
+  in let tup_el_34 = toErl 3
+  in let tup_el_35 = toErl 4
+  in let head_33 = ErlangTuple [tup_el_34, tup_el_35]
+  in let tup_el_38 = toErl 5
+  in let tup_el_39 = toErl 6
+  in let head_37 = ErlangTuple [tup_el_38, tup_el_39]
   in let
-    head_29 =
+    head_26 =
       ErlangTuple
         [ErlangAtom "bar",
-         ErlangCons head_32
-           (ErlangCons head_36 (ErlangCons head_40 ErlangEmptyList))]
-  in let tup_el_48 = toErl 1
-  in let tup_el_49 = toErl 1
-  in let tup_el_47 = ErlangTuple [tup_el_48, tup_el_49]
-  in let head_45 = ErlangTuple [ErlangAtom "baz", tup_el_47]
+         ErlangCons head_29
+           (ErlangCons head_33 (ErlangCons head_37 ErlangEmptyList))]
+  in let tup_el_45 = toErl 1
+  in let tup_el_46 = toErl 1
+  in let tup_el_44 = ErlangTuple [tup_el_45, tup_el_46]
+  in let head_42 = ErlangTuple [ErlangAtom "baz", tup_el_44]
   in let
-    fun_52 =
+    fun_49 =
       ErlangFun 0
         (let
-           lambda_53 [] =
+           lambda_50 [] =
              EXC.tryOfCatch
                (\ _ ->
                   erlps__serialize__2
                     [ErlangCons head_0
                        (ErlangCons head_6 (ErlangCons head_14 ErlangEmptyList)),
                      ErlangCons head_20
-                       (ErlangCons head_29
-                          (ErlangCons head_45 ErlangEmptyList))])
-               (\ of_56 ->
+                       (ErlangCons head_26
+                          (ErlangCons head_42 ErlangEmptyList))])
+               (\ of_53 ->
                   let   
-                    head_63 =
+                    head_60 =
                       ErlangTuple
                         [ErlangAtom "module",
                          ErlangAtom "aeser_chain_objects_tests"]
-                  in let tup_el_69 = toErl 53
-                  in let head_67 = ErlangTuple [ErlangAtom "line", tup_el_69]
-                  in let tup_el_73 = toErl "serialize ( Template , Values )"
+                  in let tup_el_66 = toErl 53
+                  in let head_64 = ErlangTuple [ErlangAtom "line", tup_el_66]
+                  in let tup_el_70 = toErl "serialize ( Template , Values )"
                   in let
-                    head_71 = ErlangTuple [ErlangAtom "expression", tup_el_73]
-                  in let lop_78 = toErl "{ "
-                  in let lop_80 = toErl "error"
-                  in let lop_82 = toErl " , "
-                  in let lop_84 = toErl "{ illegal_field , _ , _ , _ , _ , _ }"
-                  in let rop_85 = toErl " , [...] }"
-                  in let rop_83 = BIF.erlang__op_append [lop_84, rop_85]
-                  in let rop_81 = BIF.erlang__op_append [lop_82, rop_83]
-                  in let rop_79 = BIF.erlang__op_append [lop_80, rop_81]
-                  in let tup_el_77 = BIF.erlang__op_append [lop_78, rop_79]
-                  in let head_75 = ErlangTuple [ErlangAtom "pattern", tup_el_77]
+                    head_68 = ErlangTuple [ErlangAtom "expression", tup_el_70]
+                  in let lop_75 = toErl "{ "
+                  in let lop_77 = toErl "error"
+                  in let lop_79 = toErl " , "
+                  in let lop_81 = toErl "{ illegal_field , _ , _ , _ , _ , _ }"
+                  in let rop_82 = toErl " , [...] }"
+                  in let rop_80 = BIF.erlang__op_append [lop_81, rop_82]
+                  in let rop_78 = BIF.erlang__op_append [lop_79, rop_80]
+                  in let rop_76 = BIF.erlang__op_append [lop_77, rop_78]
+                  in let tup_el_74 = BIF.erlang__op_append [lop_75, rop_76]
+                  in let head_72 = ErlangTuple [ErlangAtom "pattern", tup_el_74]
                   in let
-                    head_87 =
-                      ErlangTuple [ErlangAtom "unexpected_success", of_56]
+                    head_84 =
+                      ErlangTuple [ErlangAtom "unexpected_success", of_53]
                   in let
-                    arg_60 =
+                    arg_57 =
                       ErlangTuple
                         [ErlangAtom "assertException",
-                         ErlangCons head_63
-                           (ErlangCons head_67
-                              (ErlangCons head_71
-                                 (ErlangCons head_75
-                                    (ErlangCons head_87 ErlangEmptyList))))]
-                  in BIF.erlang__error__1 [arg_60])
-               (\ ex_57 ->
-                  case ex_57 of
+                         ErlangCons head_60
+                           (ErlangCons head_64
+                              (ErlangCons head_68
+                                 (ErlangCons head_72
+                                    (ErlangCons head_84 ErlangEmptyList))))]
+                  in BIF.erlang__error__1 [arg_57])
+               (\ ex_54 ->
+                  case ex_54 of
                     (ErlangTuple [(ErlangAtom "error"),
                                   (ErlangTuple [(ErlangAtom "illegal_field"), _,
                                                 _, _, _, _]),
                                   _]) ->
                       ErlangAtom "ok"
-                    (ErlangTuple [__c_91, __t_92, __s_93]) ->
+                    (ErlangTuple [__c_88, __t_89, __s_90]) ->
                       let   
-                        head_97 =
+                        head_94 =
                           ErlangTuple
                             [ErlangAtom "module",
                              ErlangAtom "aeser_chain_objects_tests"]
-                      in let tup_el_103 = toErl 53
+                      in let tup_el_100 = toErl 53
                       in let
-                        head_101 = ErlangTuple [ErlangAtom "line", tup_el_103]
+                        head_98 = ErlangTuple [ErlangAtom "line", tup_el_100]
                       in let
-                        tup_el_107 = toErl "serialize ( Template , Values )"
+                        tup_el_104 = toErl "serialize ( Template , Values )"
                       in let
-                        head_105 =
-                          ErlangTuple [ErlangAtom "expression", tup_el_107]
-                      in let lop_112 = toErl "{ "
-                      in let lop_114 = toErl "error"
-                      in let lop_116 = toErl " , "
+                        head_102 =
+                          ErlangTuple [ErlangAtom "expression", tup_el_104]
+                      in let lop_109 = toErl "{ "
+                      in let lop_111 = toErl "error"
+                      in let lop_113 = toErl " , "
                       in let
-                        lop_118 = toErl "{ illegal_field , _ , _ , _ , _ , _ }"
-                      in let rop_119 = toErl " , [...] }"
-                      in let rop_117 = BIF.erlang__op_append [lop_118, rop_119]
-                      in let rop_115 = BIF.erlang__op_append [lop_116, rop_117]
-                      in let rop_113 = BIF.erlang__op_append [lop_114, rop_115]
+                        lop_115 = toErl "{ illegal_field , _ , _ , _ , _ , _ }"
+                      in let rop_116 = toErl " , [...] }"
+                      in let rop_114 = BIF.erlang__op_append [lop_115, rop_116]
+                      in let rop_112 = BIF.erlang__op_append [lop_113, rop_114]
+                      in let rop_110 = BIF.erlang__op_append [lop_111, rop_112]
                       in let
-                        tup_el_111 = BIF.erlang__op_append [lop_112, rop_113]
+                        tup_el_108 = BIF.erlang__op_append [lop_109, rop_110]
                       in let
-                        head_109 =
-                          ErlangTuple [ErlangAtom "pattern", tup_el_111]
-                      in let tup_el_123 = ErlangTuple [__c_91, __t_92, __s_93]
+                        head_106 =
+                          ErlangTuple [ErlangAtom "pattern", tup_el_108]
+                      in let tup_el_120 = ErlangTuple [__c_88, __t_89, __s_90]
                       in let
-                        head_121 =
+                        head_118 =
                           ErlangTuple
-                            [ErlangAtom "unexpected_exception", tup_el_123]
+                            [ErlangAtom "unexpected_exception", tup_el_120]
                       in let
-                        arg_94 =
+                        arg_91 =
                           ErlangTuple
                             [ErlangAtom "assertException",
-                             ErlangCons head_97
-                               (ErlangCons head_101
-                                  (ErlangCons head_105
-                                     (ErlangCons head_109
-                                        (ErlangCons head_121
+                             ErlangCons head_94
+                               (ErlangCons head_98
+                                  (ErlangCons head_102
+                                     (ErlangCons head_106
+                                        (ErlangCons head_118
                                            ErlangEmptyList))))]
-                      in BIF.erlang__error__1 [arg_94]
-                    ex_58 -> EXC.raise ex_58)
-           lambda_53 [] = EXC.function_clause unit
-           lambda_53 args = EXC.badarity (ErlangFun 0 lambda_53) args
-         in lambda_53)
-  in BIF.erlang__apply__2 [fun_52, ErlangEmptyList]
+                      in BIF.erlang__error__1 [arg_91]
+                    ex_55 -> EXC.raise ex_55)
+           lambda_50 [] = EXC.function_clause unit
+           lambda_50 args = EXC.badarity (ErlangFun 0 lambda_50) args
+         in lambda_50)
+  in BIF.erlang__apply__2 [fun_49, ErlangEmptyList]
 erlps__array_fail_test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 0 erlps__array_fail_test__0) args
 
 erlps__deep_array_test__0 :: ErlangFun
 erlps__deep_array_test__0 [] =
@@ -955,105 +933,97 @@ erlps__deep_array_test__0 [] =
   in let tup_el_18 = ErlangTuple [tup_el_19]
   in let head_16 = ErlangTuple [ErlangAtom "baz", tup_el_18]
   in let tup_el_27 = toErl 1
-  in let bin_el_29 = toErl 102
-  in let bin_el_30 = toErl 111
-  in let bin_el_31 = toErl 111
   in let
     tup_el_28 =
-      ErlangBinary
-        (BIN.concat
-           [BIN.fromInt bin_el_29 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_30 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_31 (toErl 8) 1 BIN.Big])
+      ErlangBinary (BIN.fromInts (toErl "foo") (toErl 8) 1 BIN.Big)
   in let tup_el_26 = ErlangTuple [tup_el_27, tup_el_28]
   in let tup_el_25 = ErlangTuple [tup_el_26]
   in let head_23 = ErlangTuple [ErlangAtom "foo", tup_el_25]
-  in let tup_el_38 = toErl 1
-  in let tup_el_37 = ErlangTuple [tup_el_38]
-  in let tup_el_39 = toErl 2
-  in let head_36 = ErlangTuple [tup_el_37, tup_el_39]
-  in let tup_el_43 = toErl 3
-  in let tup_el_42 = ErlangTuple [tup_el_43]
-  in let tup_el_44 = toErl 4
-  in let head_41 = ErlangTuple [tup_el_42, tup_el_44]
-  in let tup_el_48 = toErl 5
-  in let tup_el_47 = ErlangTuple [tup_el_48]
-  in let tup_el_49 = toErl 6
-  in let head_46 = ErlangTuple [tup_el_47, tup_el_49]
+  in let tup_el_35 = toErl 1
+  in let tup_el_34 = ErlangTuple [tup_el_35]
+  in let tup_el_36 = toErl 2
+  in let head_33 = ErlangTuple [tup_el_34, tup_el_36]
+  in let tup_el_40 = toErl 3
+  in let tup_el_39 = ErlangTuple [tup_el_40]
+  in let tup_el_41 = toErl 4
+  in let head_38 = ErlangTuple [tup_el_39, tup_el_41]
+  in let tup_el_45 = toErl 5
+  in let tup_el_44 = ErlangTuple [tup_el_45]
+  in let tup_el_46 = toErl 6
+  in let head_43 = ErlangTuple [tup_el_44, tup_el_46]
   in let
-    head_33 =
+    head_30 =
       ErlangTuple
         [ErlangAtom "bar",
-         ErlangCons head_36
-           (ErlangCons head_41 (ErlangCons head_46 ErlangEmptyList))]
-  in let tup_el_56 = toErl 1
-  in let tup_el_55 = ErlangTuple [tup_el_56]
-  in let tup_el_54 = ErlangTuple [tup_el_55]
-  in let head_52 = ErlangTuple [ErlangAtom "baz", tup_el_54]
+         ErlangCons head_33
+           (ErlangCons head_38 (ErlangCons head_43 ErlangEmptyList))]
+  in let tup_el_53 = toErl 1
+  in let tup_el_52 = ErlangTuple [tup_el_53]
+  in let tup_el_51 = ErlangTuple [tup_el_52]
+  in let head_49 = ErlangTuple [ErlangAtom "baz", tup_el_51]
   in let
-    fun_59 =
+    fun_56 =
       ErlangFun 0
         (let
-           lambda_60 [] =
+           lambda_57 [] =
              let   
-               arg_64 =
+               arg_61 =
                  erlps__serialize__2
                    [ErlangCons head_0
                       (ErlangCons head_7 (ErlangCons head_16 ErlangEmptyList)),
                     ErlangCons head_23
-                      (ErlangCons head_33 (ErlangCons head_52 ErlangEmptyList))]
+                      (ErlangCons head_30 (ErlangCons head_49 ErlangEmptyList))]
              in let
-               case_62 =
+               case_59 =
                  erlps__deserialize__2
                    [ErlangCons head_0
                       (ErlangCons head_7 (ErlangCons head_16 ErlangEmptyList)),
-                    arg_64]
+                    arg_61]
              in
-               case case_62 of
-                 __x_67 | (__x_67 ==
-                             (ErlangCons head_23
-                                (ErlangCons head_33
-                                   (ErlangCons head_52 ErlangEmptyList)))) ->
+               case case_59 of
+                 __x_64 | __x_64 ==
+                            (ErlangCons head_23
+                               (ErlangCons head_30
+                                  (ErlangCons head_49 ErlangEmptyList))) ->
                    ErlangAtom "ok"
-                 __v_68 ->
+                 __v_65 ->
                    let   
-                     head_72 =
+                     head_69 =
                        ErlangTuple
                          [ErlangAtom "module",
                           ErlangAtom "aeser_chain_objects_tests"]
-                   in let tup_el_78 = toErl 58
-                   in let head_76 = ErlangTuple [ErlangAtom "line", tup_el_78]
+                   in let tup_el_75 = toErl 58
+                   in let head_73 = ErlangTuple [ErlangAtom "line", tup_el_75]
                    in let
-                     tup_el_82 =
+                     tup_el_79 =
                        toErl
                          "deserialize ( Template , serialize ( Template , Values ) )"
                    in let
-                     head_80 = ErlangTuple [ErlangAtom "expression", tup_el_82]
+                     head_77 = ErlangTuple [ErlangAtom "expression", tup_el_79]
                    in let
-                     head_84 =
+                     head_81 =
                        ErlangTuple
                          [ErlangAtom "expected",
                           ErlangCons head_23
-                            (ErlangCons head_33
-                               (ErlangCons head_52 ErlangEmptyList))]
-                   in let head_88 = ErlangTuple [ErlangAtom "value", __v_68]
+                            (ErlangCons head_30
+                               (ErlangCons head_49 ErlangEmptyList))]
+                   in let head_85 = ErlangTuple [ErlangAtom "value", __v_65]
                    in let
-                     arg_69 =
+                     arg_66 =
                        ErlangTuple
                          [ErlangAtom "assertEqual",
-                          ErlangCons head_72
-                            (ErlangCons head_76
-                               (ErlangCons head_80
-                                  (ErlangCons head_84
-                                     (ErlangCons head_88 ErlangEmptyList))))]
-                   in BIF.erlang__error__1 [arg_69]
-           lambda_60 [] = EXC.function_clause unit
-           lambda_60 args = EXC.badarity (ErlangFun 0 lambda_60) args
-         in lambda_60)
-  in BIF.erlang__apply__2 [fun_59, ErlangEmptyList]
+                          ErlangCons head_69
+                            (ErlangCons head_73
+                               (ErlangCons head_77
+                                  (ErlangCons head_81
+                                     (ErlangCons head_85 ErlangEmptyList))))]
+                   in BIF.erlang__error__1 [arg_66]
+           lambda_57 [] = EXC.function_clause unit
+           lambda_57 args = EXC.badarity (ErlangFun 0 lambda_57) args
+         in lambda_57)
+  in BIF.erlang__apply__2 [fun_56, ErlangEmptyList]
 erlps__deep_array_test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 0 erlps__deep_array_test__0) args
 
 erlps__deep_array_fail_test__0 :: ErlangFun
 erlps__deep_array_fail_test__0 [] =
@@ -1071,147 +1041,139 @@ erlps__deep_array_fail_test__0 [] =
   in let tup_el_18 = ErlangTuple [tup_el_19]
   in let head_16 = ErlangTuple [ErlangAtom "baz", tup_el_18]
   in let tup_el_27 = toErl 1
-  in let bin_el_29 = toErl 102
-  in let bin_el_30 = toErl 111
-  in let bin_el_31 = toErl 111
   in let
     tup_el_28 =
-      ErlangBinary
-        (BIN.concat
-           [BIN.fromInt bin_el_29 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_30 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_31 (toErl 8) 1 BIN.Big])
+      ErlangBinary (BIN.fromInts (toErl "foo") (toErl 8) 1 BIN.Big)
   in let tup_el_26 = ErlangTuple [tup_el_27, tup_el_28]
   in let tup_el_25 = ErlangTuple [tup_el_26]
   in let head_23 = ErlangTuple [ErlangAtom "foo", tup_el_25]
-  in let tup_el_38 = toErl 1
-  in let tup_el_37 = ErlangTuple [tup_el_38]
-  in let tup_el_39 = toErl 2
-  in let head_36 = ErlangTuple [tup_el_37, tup_el_39]
-  in let tup_el_43 = toErl 3
-  in let tup_el_42 = ErlangTuple [tup_el_43]
-  in let tup_el_44 = toErl 4
-  in let head_41 = ErlangTuple [tup_el_42, tup_el_44]
-  in let tup_el_48 = toErl 5
-  in let tup_el_47 = ErlangTuple [tup_el_48]
-  in let tup_el_49 = toErl 6
-  in let head_46 = ErlangTuple [tup_el_47, tup_el_49]
+  in let tup_el_35 = toErl 1
+  in let tup_el_34 = ErlangTuple [tup_el_35]
+  in let tup_el_36 = toErl 2
+  in let head_33 = ErlangTuple [tup_el_34, tup_el_36]
+  in let tup_el_40 = toErl 3
+  in let tup_el_39 = ErlangTuple [tup_el_40]
+  in let tup_el_41 = toErl 4
+  in let head_38 = ErlangTuple [tup_el_39, tup_el_41]
+  in let tup_el_45 = toErl 5
+  in let tup_el_44 = ErlangTuple [tup_el_45]
+  in let tup_el_46 = toErl 6
+  in let head_43 = ErlangTuple [tup_el_44, tup_el_46]
   in let
-    head_33 =
+    head_30 =
       ErlangTuple
         [ErlangAtom "bar",
-         ErlangCons head_36
-           (ErlangCons head_41 (ErlangCons head_46 ErlangEmptyList))]
-  in let tup_el_56 = toErl 1
-  in let tup_el_55 = ErlangTuple [tup_el_56]
-  in let tup_el_54 = ErlangTuple [tup_el_55]
-  in let head_52 = ErlangTuple [ErlangAtom "baz", tup_el_54]
+         ErlangCons head_33
+           (ErlangCons head_38 (ErlangCons head_43 ErlangEmptyList))]
+  in let tup_el_53 = toErl 1
+  in let tup_el_52 = ErlangTuple [tup_el_53]
+  in let tup_el_51 = ErlangTuple [tup_el_52]
+  in let head_49 = ErlangTuple [ErlangAtom "baz", tup_el_51]
   in let
-    fun_59 =
+    fun_56 =
       ErlangFun 0
         (let
-           lambda_60 [] =
+           lambda_57 [] =
              EXC.tryOfCatch
                (\ _ ->
                   erlps__serialize__2
                     [ErlangCons head_0
                        (ErlangCons head_7 (ErlangCons head_16 ErlangEmptyList)),
                      ErlangCons head_23
-                       (ErlangCons head_33
-                          (ErlangCons head_52 ErlangEmptyList))])
-               (\ of_63 ->
+                       (ErlangCons head_30
+                          (ErlangCons head_49 ErlangEmptyList))])
+               (\ of_60 ->
                   let   
-                    head_70 =
+                    head_67 =
                       ErlangTuple
                         [ErlangAtom "module",
                          ErlangAtom "aeser_chain_objects_tests"]
-                  in let tup_el_76 = toErl 63
-                  in let head_74 = ErlangTuple [ErlangAtom "line", tup_el_76]
-                  in let tup_el_80 = toErl "serialize ( Template , Values )"
+                  in let tup_el_73 = toErl 63
+                  in let head_71 = ErlangTuple [ErlangAtom "line", tup_el_73]
+                  in let tup_el_77 = toErl "serialize ( Template , Values )"
                   in let
-                    head_78 = ErlangTuple [ErlangAtom "expression", tup_el_80]
-                  in let lop_85 = toErl "{ "
-                  in let lop_87 = toErl "error"
-                  in let lop_89 = toErl " , "
-                  in let lop_91 = toErl "{ illegal_field , _ , _ , _ , _ , _ }"
-                  in let rop_92 = toErl " , [...] }"
-                  in let rop_90 = BIF.erlang__op_append [lop_91, rop_92]
-                  in let rop_88 = BIF.erlang__op_append [lop_89, rop_90]
-                  in let rop_86 = BIF.erlang__op_append [lop_87, rop_88]
-                  in let tup_el_84 = BIF.erlang__op_append [lop_85, rop_86]
-                  in let head_82 = ErlangTuple [ErlangAtom "pattern", tup_el_84]
+                    head_75 = ErlangTuple [ErlangAtom "expression", tup_el_77]
+                  in let lop_82 = toErl "{ "
+                  in let lop_84 = toErl "error"
+                  in let lop_86 = toErl " , "
+                  in let lop_88 = toErl "{ illegal_field , _ , _ , _ , _ , _ }"
+                  in let rop_89 = toErl " , [...] }"
+                  in let rop_87 = BIF.erlang__op_append [lop_88, rop_89]
+                  in let rop_85 = BIF.erlang__op_append [lop_86, rop_87]
+                  in let rop_83 = BIF.erlang__op_append [lop_84, rop_85]
+                  in let tup_el_81 = BIF.erlang__op_append [lop_82, rop_83]
+                  in let head_79 = ErlangTuple [ErlangAtom "pattern", tup_el_81]
                   in let
-                    head_94 =
-                      ErlangTuple [ErlangAtom "unexpected_success", of_63]
+                    head_91 =
+                      ErlangTuple [ErlangAtom "unexpected_success", of_60]
                   in let
-                    arg_67 =
+                    arg_64 =
                       ErlangTuple
                         [ErlangAtom "assertException",
-                         ErlangCons head_70
-                           (ErlangCons head_74
-                              (ErlangCons head_78
-                                 (ErlangCons head_82
-                                    (ErlangCons head_94 ErlangEmptyList))))]
-                  in BIF.erlang__error__1 [arg_67])
-               (\ ex_64 ->
-                  case ex_64 of
+                         ErlangCons head_67
+                           (ErlangCons head_71
+                              (ErlangCons head_75
+                                 (ErlangCons head_79
+                                    (ErlangCons head_91 ErlangEmptyList))))]
+                  in BIF.erlang__error__1 [arg_64])
+               (\ ex_61 ->
+                  case ex_61 of
                     (ErlangTuple [(ErlangAtom "error"),
                                   (ErlangTuple [(ErlangAtom "illegal_field"), _,
                                                 _, _, _, _]),
                                   _]) ->
                       ErlangAtom "ok"
-                    (ErlangTuple [__c_98, __t_99, __s_100]) ->
+                    (ErlangTuple [__c_95, __t_96, __s_97]) ->
                       let   
-                        head_104 =
+                        head_101 =
                           ErlangTuple
                             [ErlangAtom "module",
                              ErlangAtom "aeser_chain_objects_tests"]
-                      in let tup_el_110 = toErl 63
+                      in let tup_el_107 = toErl 63
                       in let
-                        head_108 = ErlangTuple [ErlangAtom "line", tup_el_110]
+                        head_105 = ErlangTuple [ErlangAtom "line", tup_el_107]
                       in let
-                        tup_el_114 = toErl "serialize ( Template , Values )"
+                        tup_el_111 = toErl "serialize ( Template , Values )"
                       in let
-                        head_112 =
-                          ErlangTuple [ErlangAtom "expression", tup_el_114]
-                      in let lop_119 = toErl "{ "
-                      in let lop_121 = toErl "error"
-                      in let lop_123 = toErl " , "
+                        head_109 =
+                          ErlangTuple [ErlangAtom "expression", tup_el_111]
+                      in let lop_116 = toErl "{ "
+                      in let lop_118 = toErl "error"
+                      in let lop_120 = toErl " , "
                       in let
-                        lop_125 = toErl "{ illegal_field , _ , _ , _ , _ , _ }"
-                      in let rop_126 = toErl " , [...] }"
-                      in let rop_124 = BIF.erlang__op_append [lop_125, rop_126]
-                      in let rop_122 = BIF.erlang__op_append [lop_123, rop_124]
-                      in let rop_120 = BIF.erlang__op_append [lop_121, rop_122]
+                        lop_122 = toErl "{ illegal_field , _ , _ , _ , _ , _ }"
+                      in let rop_123 = toErl " , [...] }"
+                      in let rop_121 = BIF.erlang__op_append [lop_122, rop_123]
+                      in let rop_119 = BIF.erlang__op_append [lop_120, rop_121]
+                      in let rop_117 = BIF.erlang__op_append [lop_118, rop_119]
                       in let
-                        tup_el_118 = BIF.erlang__op_append [lop_119, rop_120]
+                        tup_el_115 = BIF.erlang__op_append [lop_116, rop_117]
                       in let
-                        head_116 =
-                          ErlangTuple [ErlangAtom "pattern", tup_el_118]
-                      in let tup_el_130 = ErlangTuple [__c_98, __t_99, __s_100]
+                        head_113 =
+                          ErlangTuple [ErlangAtom "pattern", tup_el_115]
+                      in let tup_el_127 = ErlangTuple [__c_95, __t_96, __s_97]
                       in let
-                        head_128 =
+                        head_125 =
                           ErlangTuple
-                            [ErlangAtom "unexpected_exception", tup_el_130]
+                            [ErlangAtom "unexpected_exception", tup_el_127]
                       in let
-                        arg_101 =
+                        arg_98 =
                           ErlangTuple
                             [ErlangAtom "assertException",
-                             ErlangCons head_104
-                               (ErlangCons head_108
-                                  (ErlangCons head_112
-                                     (ErlangCons head_116
-                                        (ErlangCons head_128
+                             ErlangCons head_101
+                               (ErlangCons head_105
+                                  (ErlangCons head_109
+                                     (ErlangCons head_113
+                                        (ErlangCons head_125
                                            ErlangEmptyList))))]
-                      in BIF.erlang__error__1 [arg_101]
-                    ex_65 -> EXC.raise ex_65)
-           lambda_60 [] = EXC.function_clause unit
-           lambda_60 args = EXC.badarity (ErlangFun 0 lambda_60) args
-         in lambda_60)
-  in BIF.erlang__apply__2 [fun_59, ErlangEmptyList]
+                      in BIF.erlang__error__1 [arg_98]
+                    ex_62 -> EXC.raise ex_62)
+           lambda_57 [] = EXC.function_clause unit
+           lambda_57 args = EXC.badarity (ErlangFun 0 lambda_57) args
+         in lambda_57)
+  in BIF.erlang__apply__2 [fun_56, ErlangEmptyList]
 erlps__deep_array_fail_test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 0 erlps__deep_array_fail_test__0) args
 
 erlps__tag_fail_test__0 :: ErlangFun
 erlps__tag_fail_test__0 [] =
@@ -1339,8 +1301,7 @@ erlps__tag_fail_test__0 [] =
          in lambda_20)
   in BIF.erlang__apply__2 [fun_19, ErlangEmptyList]
 erlps__tag_fail_test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 0 erlps__tag_fail_test__0) args
 
 erlps__vsn_fail_test__0 :: ErlangFun
 erlps__vsn_fail_test__0 [] =
@@ -1468,8 +1429,7 @@ erlps__vsn_fail_test__0 [] =
          in lambda_20)
   in BIF.erlang__apply__2 [fun_19, ErlangEmptyList]
 erlps__vsn_fail_test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 0 erlps__vsn_fail_test__0) args
 
 erlps__deserialize__2 :: ErlangFun
 erlps__deserialize__2 [template_0, bin_1] =
@@ -1479,8 +1439,7 @@ erlps__deserialize__2 [template_0, bin_1] =
       [template_0, bin_1, ErlangAtom "account", arg_5]
 erlps__deserialize__2 [arg_6, arg_7] = EXC.function_clause unit
 erlps__deserialize__2 args =
-  EXC.badarity (ErlangFun 2 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 2 erlps__deserialize__2) args
 
 erlps__deserialize__4 :: ErlangFun
 erlps__deserialize__4 [template_0, bin_1, tag_2, vsn_3] =
@@ -1489,8 +1448,7 @@ erlps__deserialize__4 [template_0, bin_1, tag_2, vsn_3] =
 erlps__deserialize__4 [arg_8, arg_9, arg_10, arg_11] =
   EXC.function_clause unit
 erlps__deserialize__4 args =
-  EXC.badarity (ErlangFun 4 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 4 erlps__deserialize__4) args
 
 erlps__serialize__2 :: ErlangFun
 erlps__serialize__2 [template_0, bin_1] =
@@ -1500,8 +1458,7 @@ erlps__serialize__2 [template_0, bin_1] =
       [template_0, bin_1, ErlangAtom "account", arg_5]
 erlps__serialize__2 [arg_6, arg_7] = EXC.function_clause unit
 erlps__serialize__2 args =
-  EXC.badarity (ErlangFun 2 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 2 erlps__serialize__2) args
 
 erlps__serialize__4 :: ErlangFun
 erlps__serialize__4 [template_0, bin_1, tag_2, vsn_3] =
@@ -1510,13 +1467,11 @@ erlps__serialize__4 [template_0, bin_1, tag_2, vsn_3] =
 erlps__serialize__4 [arg_8, arg_9, arg_10, arg_11] =
   EXC.function_clause unit
 erlps__serialize__4 args =
-  EXC.badarity (ErlangFun 4 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 4 erlps__serialize__4) args
 
 erlps__test__0 :: ErlangFun
 erlps__test__0 [] =
   BIF.do_remote_fun_call "Eunit" "erlps__test__1"
     [ErlangAtom "aeser_chain_objects_tests"]
 erlps__test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 0 erlps__test__0) args

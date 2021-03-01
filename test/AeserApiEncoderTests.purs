@@ -44,8 +44,8 @@ erlps__encode_decode_test___0 [] =
                         in
                           case match_final_9_14 of
                             (ErlangTuple [_type_15, _,
-                                          bytesize_16]) | (bytesize_16 ==
-                                                             bytesize_8) ->
+                                          bytesize_16]) | bytesize_16 ==
+                                                            bytesize_8 ->
                               match_final_9_14
                             _ -> EXC.badmatch match_final_9_14
                       lambda_5 [arg_6] = EXC.function_clause unit
@@ -157,10 +157,10 @@ erlps__encode_decode_test___0 [] =
                               "erlps__decode__1" [encodedkey_103]
                         in
                           case matchExpr_107 of
-                            (ErlangTuple [type_105, key_106]) | (type_105 ==
-                                                                   type_95)
-                                                              , (key_106 ==
-                                                                   key_100) ->
+                            (ErlangTuple [type_105, key_106]) | type_105 ==
+                                                                  type_95
+                                                              , key_106 ==
+                                                                  key_100 ->
                               let
                                 match_final_108_111 =
                                   BIF.do_remote_fun_call "Aeser.Api.Encoder"
@@ -169,8 +169,8 @@ erlps__encode_decode_test___0 [] =
                               in
                                 case match_final_108_111 of
                                   (ErlangTuple [(ErlangAtom "ok"),
-                                                key_112]) | (key_112 ==
-                                                               key_100) ->
+                                                key_112]) | key_112 ==
+                                                              key_100 ->
                                     match_final_108_111
                                   _ -> EXC.badmatch match_final_108_111
                             _ -> EXC.badmatch matchExpr_107
@@ -833,8 +833,8 @@ erlps__encode_decode_test___0 [] =
                                                        (let
                                                           lambda_551 [] =
                                                             case bin_530 of
-                                                              __x_554 | (__x_554 ==
-                                                                           decoded_548) ->
+                                                              __x_554 | __x_554 ==
+                                                                          decoded_548 ->
                                                                 ErlangAtom "ok"
                                                               __v_555 ->
                                                                 let   
@@ -924,8 +924,7 @@ erlps__encode_decode_test___0 [] =
                                          (let
                                             lambda_584 [] =
                                               case decoded1_582 of
-                                                __x_587 | (__x_587 ==
-                                                             bin_530) ->
+                                                __x_587 | __x_587 == bin_530 ->
                                                   ErlangAtom "ok"
                                                 __v_588 ->
                                                   let   
@@ -1109,13 +1108,11 @@ erlps__encode_decode_test___0 [] =
             (ErlangCons head_288
                (ErlangCons head_409 (ErlangCons head_515 ErlangEmptyList)))))
 erlps__encode_decode_test___0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 0 erlps__encode_decode_test___0) args
 
 erlps__test__0 :: ErlangFun
 erlps__test__0 [] =
   BIF.do_remote_fun_call "Eunit" "erlps__test__1"
     [ErlangAtom "aeser_api_encoder_tests"]
 erlps__test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 0 erlps__test__0) args

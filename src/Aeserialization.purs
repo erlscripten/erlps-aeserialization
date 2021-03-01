@@ -38,8 +38,7 @@ erlps__serialize__4 [tag_0, vsn_1, template_2, fields_3] =
 erlps__serialize__4 [arg_24, arg_25, arg_26, arg_27] =
   EXC.function_clause unit
 erlps__serialize__4 args =
-  EXC.badarity (ErlangFun 4 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 4 erlps__serialize__4) args
 
 erlps__deserialize__5 :: ErlangFun
 erlps__deserialize__5 [type_0, tag_1, vsn_2, template0_3,
@@ -58,10 +57,10 @@ erlps__deserialize__5 [type_0, tag_1, vsn_2, template0_3,
     case case_16 of
       (ErlangCons (ErlangTuple [(ErlangAtom "tag"),
                                 tag_19]) (ErlangCons (ErlangTuple [(ErlangAtom "vsn"),
-                                                                   vsn_20]) left_21)) | (tag_19 ==
-                                                                                           tag_1)
-                                                                                      , (vsn_20 ==
-                                                                                           vsn_2) ->
+                                                                   vsn_20]) left_21)) | tag_19 ==
+                                                                                          tag_1
+                                                                                      , vsn_20 ==
+                                                                                          vsn_2 ->
         left_21
       other_22 ->
         let
@@ -74,8 +73,7 @@ erlps__deserialize__5 [type_0, tag_1, vsn_2, template0_3,
 erlps__deserialize__5 [arg_31, arg_32, arg_33, arg_34, arg_35] =
   EXC.function_clause unit
 erlps__deserialize__5 args =
-  EXC.badarity (ErlangFun 5 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 5 erlps__deserialize__5) args
 
 erlps__deserialize_tag_and_vsn__1 :: ErlangFun
 erlps__deserialize_tag_and_vsn__1 [binary_0] =
@@ -103,7 +101,7 @@ erlps__deserialize_tag_and_vsn__1 [binary_0] =
 erlps__deserialize_tag_and_vsn__1 [arg_27] =
   EXC.function_clause unit
 erlps__deserialize_tag_and_vsn__1 args =
-  EXC.badarity (ErlangFun 1 (\ _ -> ErlangAtom "purs_tco_sucks"))
+  EXC.badarity (ErlangFun 1 erlps__deserialize_tag_and_vsn__1)
     args
 
 erlps__encode_fields__2 :: ErlangFun
@@ -111,7 +109,7 @@ erlps__encode_fields__2 [(ErlangCons (ErlangTuple [field_0,
                                                    type_1]) typesleft_2),
                          (ErlangCons (ErlangTuple [field_3,
                                                    val_4]) fieldsleft_5)]
-  | (field_3 == field_0) =
+  | field_3 == field_0 =
   EXC.tryOfCatch (\ _ -> erlps__encode_field__2 [type_1, val_4])
     (\ of_8 ->
        let tail_13 = erlps__encode_fields__2 [typesleft_2, fieldsleft_5]
@@ -138,8 +136,7 @@ erlps__encode_fields__2 [template_0, values_1] =
   in BIF.erlang__error__1 [arg_2]
 erlps__encode_fields__2 [arg_6, arg_7] = EXC.function_clause unit
 erlps__encode_fields__2 args =
-  EXC.badarity (ErlangFun 2 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 2 erlps__encode_fields__2) args
 
 erlps__decode_fields__2 :: ErlangFun
 erlps__decode_fields__2 [(ErlangCons (ErlangTuple [field_0,
@@ -174,8 +171,7 @@ erlps__decode_fields__2 [template_0, values_1] =
   in BIF.erlang__error__1 [arg_2]
 erlps__decode_fields__2 [arg_6, arg_7] = EXC.function_clause unit
 erlps__decode_fields__2 args =
-  EXC.badarity (ErlangFun 2 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 2 erlps__decode_fields__2) args
 
 erlps__encode_field__2 :: ErlangFun
 erlps__encode_field__2 [(ErlangCons type_0 (ErlangEmptyList)),
@@ -187,12 +183,12 @@ erlps__encode_field__2 [(ErlangCons type_0 (ErlangEmptyList)),
        in ErlangCons lcRet_5 ErlangEmptyList)
     l_1
 erlps__encode_field__2 [type_0, t_1]
-  | ((ErlangAtom "true") ==
-       (falsifyErrors
-          (\ _ ->
-             let    lop_14 = BIF.erlang__tuple_size__1 [type_0]
-             in let rop_16 = BIF.erlang__tuple_size__1 [t_1]
-             in BIF.erlang__op_exactEq [lop_14, rop_16]))) =
+  | (ErlangAtom "true") ==
+      (falsifyErrors
+         (\ _ ->
+            let    lop_14 = BIF.erlang__tuple_size__1 [type_0]
+            in let rop_16 = BIF.erlang__tuple_size__1 [t_1]
+            in BIF.erlang__op_exactEq [lop_14, rop_16])) =
   let    arg_2 = BIF.erlang__tuple_to_list__1 [type_0]
   in let arg_4 = BIF.erlang__tuple_to_list__1 [t_1]
   in let
@@ -208,11 +204,10 @@ erlps__encode_field__2 [type_0, t_1]
            _ -> ErlangEmptyList)
       zipped_6
 erlps__encode_field__2 [(ErlangAtom "int"), x_0]
-  | ((isEInt x_0) && (weakGeq x_0 (toErl 0))) =
+  | (isEInt x_0) && (weakGeq x_0 (toErl 0)) =
   BIF.binary__encode_unsigned__1 [x_0]
 erlps__encode_field__2 [(ErlangAtom "binary"), x_0]
-  | ((ErlangAtom "true") ==
-       (falsifyErrors (\ _ -> BIF.erlang__is_binary__1 [x_0]))) =
+  | isEBinary x_0 =
   x_0
 erlps__encode_field__2 [(ErlangAtom "bool"), (ErlangAtom "true")]
   =
@@ -240,8 +235,7 @@ erlps__encode_field__2 [type_0, val_1] =
   in BIF.erlang__error__1 [arg_2]
 erlps__encode_field__2 [arg_6, arg_7] = EXC.function_clause unit
 erlps__encode_field__2 args =
-  EXC.badarity (ErlangFun 2 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 2 erlps__encode_field__2) args
 
 erlps__decode_field__2 :: ErlangFun
 erlps__decode_field__2 [(ErlangCons type_0 (ErlangEmptyList)),
@@ -253,12 +247,12 @@ erlps__decode_field__2 [(ErlangCons type_0 (ErlangEmptyList)),
        in ErlangCons lcRet_5 ErlangEmptyList)
     list_1
 erlps__decode_field__2 [type_0, list_1]
-  | ((ErlangAtom "true") ==
-       (falsifyErrors
-          (\ _ ->
-             let    lop_14 = BIF.erlang__length__1 [list_1]
-             in let rop_16 = BIF.erlang__tuple_size__1 [type_0]
-             in BIF.erlang__op_exactEq [lop_14, rop_16]))) =
+  | (ErlangAtom "true") ==
+      (falsifyErrors
+         (\ _ ->
+            let    lop_14 = BIF.erlang__length__1 [list_1]
+            in let rop_16 = BIF.erlang__tuple_size__1 [type_0]
+            in BIF.erlang__op_exactEq [lop_14, rop_16])) =
   let    arg_2 = BIF.erlang__tuple_to_list__1 [type_0]
   in let
     zipped_5 =
@@ -279,32 +273,30 @@ erlps__decode_field__2 [(ErlangAtom "int"),
   | (ErlangInt size_1) <- (toErl 8)
   , (BIN.Ok (ErlangInt num_3) bin_2) <-
       (BIN.chopInt binSeg_0 size_1 1 BIN.Big BIN.Unsigned)
-  , ((ErlangInt num_3) == (toErl 0))
+  , (ErlangInt num_3) == (toErl 0)
   , (ErlangInt size_4) <- (BIN.size bin_2)
   , (BIN.Ok x_6 bin_5) <- (BIN.chopBin bin_2 size_4 8)
   , BIN.empty bin_5
-  , ((ErlangAtom "true") ==
-       (falsifyErrors
-          (\ _ ->
-             let rop_13 = ErlangBinary (BIN.concat [])
-             in BIF.erlang__op_exactNeq [x_6, rop_13]))) =
+  , (ErlangAtom "true") ==
+      (falsifyErrors
+         (\ _ ->
+            let rop_13 = ErlangBinary (BIN.concat [])
+            in BIF.erlang__op_exactNeq [x_6, rop_13])) =
   let
     arg_8 = ErlangTuple [ErlangAtom "illegal", ErlangAtom "int", b_7]
   in BIF.erlang__error__1 [arg_8]
 erlps__decode_field__2 [(ErlangAtom "int"), x_0]
-  | ((ErlangAtom "true") ==
-       (falsifyErrors (\ _ -> BIF.erlang__is_binary__1 [x_0]))) =
+  | isEBinary x_0 =
   BIF.binary__decode_unsigned__1 [x_0]
 erlps__decode_field__2 [(ErlangAtom "binary"), x_0]
-  | ((ErlangAtom "true") ==
-       (falsifyErrors (\ _ -> BIF.erlang__is_binary__1 [x_0]))) =
+  | isEBinary x_0 =
   x_0
 erlps__decode_field__2 [(ErlangAtom "bool"),
                         (ErlangBinary binSeg_0)]
   | (ErlangInt size_1) <- (toErl 8)
   , (BIN.Ok (ErlangInt num_3) bin_2) <-
       (BIN.chopInt binSeg_0 size_1 1 BIN.Big BIN.Unsigned)
-  , ((ErlangInt num_3) == (toErl 1))
+  , (ErlangInt num_3) == (toErl 1)
   , BIN.empty bin_2 =
   ErlangAtom "true"
 erlps__decode_field__2 [(ErlangAtom "bool"),
@@ -312,7 +304,7 @@ erlps__decode_field__2 [(ErlangAtom "bool"),
   | (ErlangInt size_1) <- (toErl 8)
   , (BIN.Ok (ErlangInt num_3) bin_2) <-
       (BIN.chopInt binSeg_0 size_1 1 BIN.Big BIN.Unsigned)
-  , ((ErlangInt num_3) == (toErl 0))
+  , (ErlangInt num_3) == (toErl 0)
   , BIN.empty bin_2 =
   ErlangAtom "false"
 erlps__decode_field__2 [(ErlangAtom "id"), val_0] =
@@ -332,5 +324,4 @@ erlps__decode_field__2 [type_0, x_1] =
   in BIF.erlang__error__1 [arg_2]
 erlps__decode_field__2 [arg_6, arg_7] = EXC.function_clause unit
 erlps__decode_field__2 args =
-  EXC.badarity (ErlangFun 2 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 2 erlps__decode_field__2) args

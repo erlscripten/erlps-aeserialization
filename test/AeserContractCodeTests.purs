@@ -24,213 +24,125 @@ import Partial.Unsafe (unsafePartial)
 
 erlps__vsn_1_test__0 :: ErlangFun
 erlps__vsn_1_test__0 [] =
-  let    bin_el_6 = toErl 68
-  in let bin_el_7 = toErl 85
-  in let bin_el_8 = toErl 77
-  in let bin_el_9 = toErl 77
-  in let bin_el_10 = toErl 89
-  in let bin_el_11 = toErl 32
-  in let bin_el_12 = toErl 67
-  in let bin_el_13 = toErl 79
-  in let bin_el_14 = toErl 68
-  in let bin_el_15 = toErl 69
-  in let
+  let   
     val_5 =
       ErlangBinary
-        (BIN.concat
-           [BIN.fromInt bin_el_6 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_7 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_8 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_9 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_10 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_11 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_12 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_13 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_14 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_15 (toErl 8) 1 BIN.Big])
-  in let tup_el_18 = ErlangBinary (BIN.concat [])
-  in let tup_el_19 = ErlangBinary (BIN.concat [])
-  in let tup_el_20 = ErlangBinary (BIN.concat [])
-  in let tup_el_21 = ErlangBinary (BIN.concat [])
+        (BIN.fromInts (toErl "DUMMY CODE") (toErl 8) 1 BIN.Big)
+  in let tup_el_8 = ErlangBinary (BIN.concat [])
+  in let tup_el_9 = ErlangBinary (BIN.concat [])
+  in let tup_el_10 = ErlangBinary (BIN.concat [])
+  in let tup_el_11 = ErlangBinary (BIN.concat [])
   in let
-    head_17 =
-      ErlangTuple [tup_el_18, tup_el_19, tup_el_20, tup_el_21]
-  in let val_23 = toErl "contract Foo = ..."
+    head_7 = ErlangTuple [tup_el_8, tup_el_9, tup_el_10, tup_el_11]
+  in let val_13 = toErl "contract Foo = ..."
   in let
     arg_1 =
       ErlangMap
         (Map.fromFoldable
            [DT.Tuple (ErlangAtom "byte_code") val_5,
             DT.Tuple (ErlangAtom "type_info")
-              (ErlangCons head_17 ErlangEmptyList),
-            DT.Tuple (ErlangAtom "contract_source") val_23])
-  in let arg_24 = toErl 1
+              (ErlangCons head_7 ErlangEmptyList),
+            DT.Tuple (ErlangAtom "contract_source") val_13])
+  in let arg_14 = toErl 1
   in let
     arg_0 =
       BIF.do_remote_fun_call "Aeser.Contract.Code"
-        "erlps__serialize__2" [arg_1, arg_24]
+        "erlps__serialize__2" [arg_1, arg_14]
   in
     BIF.do_remote_fun_call "Aeser.Contract.Code"
       "erlps__deserialize__1" [arg_0]
 erlps__vsn_1_test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 0 erlps__vsn_1_test__0) args
 
 erlps__vsn_2_test__0 :: ErlangFun
 erlps__vsn_2_test__0 [] =
-  let    bin_el_7 = toErl 68
-  in let bin_el_8 = toErl 85
-  in let bin_el_9 = toErl 77
-  in let bin_el_10 = toErl 77
-  in let bin_el_11 = toErl 89
-  in let bin_el_12 = toErl 32
-  in let bin_el_13 = toErl 67
-  in let bin_el_14 = toErl 79
-  in let bin_el_15 = toErl 68
-  in let bin_el_16 = toErl 69
-  in let
+  let   
     val_6 =
       ErlangBinary
-        (BIN.concat
-           [BIN.fromInt bin_el_7 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_8 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_9 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_10 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_11 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_12 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_13 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_14 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_15 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_16 (toErl 8) 1 BIN.Big])
-  in let tup_el_19 = ErlangBinary (BIN.concat [])
-  in let tup_el_20 = ErlangBinary (BIN.concat [])
-  in let tup_el_21 = ErlangBinary (BIN.concat [])
-  in let tup_el_22 = ErlangBinary (BIN.concat [])
+        (BIN.fromInts (toErl "DUMMY CODE") (toErl 8) 1 BIN.Big)
+  in let tup_el_9 = ErlangBinary (BIN.concat [])
+  in let tup_el_10 = ErlangBinary (BIN.concat [])
+  in let tup_el_11 = ErlangBinary (BIN.concat [])
+  in let tup_el_12 = ErlangBinary (BIN.concat [])
   in let
-    head_18 =
-      ErlangTuple [tup_el_19, tup_el_20, tup_el_21, tup_el_22]
-  in let bin_el_25 = toErl 51
-  in let bin_el_26 = toErl 46
-  in let bin_el_27 = toErl 49
-  in let bin_el_28 = toErl 46
-  in let bin_el_29 = toErl 52
+    head_8 = ErlangTuple [tup_el_9, tup_el_10, tup_el_11, tup_el_12]
   in let
-    val_24 =
+    val_14 =
+      ErlangBinary (BIN.fromInts (toErl "3.1.4") (toErl 8) 1 BIN.Big)
+  in let bin_el_16 = toErl 1
+  in let bin_el_17 = toErl 2
+  in let bin_el_18 = toErl 3
+  in let bin_el_19 = toErl 4
+  in let
+    val_15 =
       ErlangBinary
         (BIN.concat
-           [BIN.fromInt bin_el_25 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_26 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_27 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_28 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_29 (toErl 8) 1 BIN.Big])
-  in let bin_el_31 = toErl 1
-  in let bin_el_32 = toErl 2
-  in let bin_el_33 = toErl 3
-  in let bin_el_34 = toErl 4
-  in let
-    val_30 =
-      ErlangBinary
-        (BIN.concat
-           [BIN.fromInt bin_el_31 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_32 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_33 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_34 (toErl 8) 1 BIN.Big])
+           [BIN.fromInt bin_el_16 (toErl 8) 1 BIN.Big,
+            BIN.fromInt bin_el_17 (toErl 8) 1 BIN.Big,
+            BIN.fromInt bin_el_18 (toErl 8) 1 BIN.Big,
+            BIN.fromInt bin_el_19 (toErl 8) 1 BIN.Big])
   in let
     arg_1 =
       ErlangMap
         (Map.fromFoldable
            [DT.Tuple (ErlangAtom "byte_code") val_6,
             DT.Tuple (ErlangAtom "type_info")
-              (ErlangCons head_18 ErlangEmptyList),
-            DT.Tuple (ErlangAtom "compiler_version") val_24,
-            DT.Tuple (ErlangAtom "source_hash") val_30])
-  in let arg_35 = toErl 2
+              (ErlangCons head_8 ErlangEmptyList),
+            DT.Tuple (ErlangAtom "compiler_version") val_14,
+            DT.Tuple (ErlangAtom "source_hash") val_15])
+  in let arg_20 = toErl 2
   in let
     arg_0 =
       BIF.do_remote_fun_call "Aeser.Contract.Code"
-        "erlps__serialize__2" [arg_1, arg_35]
+        "erlps__serialize__2" [arg_1, arg_20]
   in
     BIF.do_remote_fun_call "Aeser.Contract.Code"
       "erlps__deserialize__1" [arg_0]
 erlps__vsn_2_test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 0 erlps__vsn_2_test__0) args
 
 erlps__vsn_3_test__0 :: ErlangFun
 erlps__vsn_3_test__0 [] =
-  let    bin_el_8 = toErl 68
-  in let bin_el_9 = toErl 85
-  in let bin_el_10 = toErl 77
-  in let bin_el_11 = toErl 77
-  in let bin_el_12 = toErl 89
-  in let bin_el_13 = toErl 32
-  in let bin_el_14 = toErl 67
-  in let bin_el_15 = toErl 79
-  in let bin_el_16 = toErl 68
-  in let bin_el_17 = toErl 69
-  in let
+  let   
     val_7 =
       ErlangBinary
-        (BIN.concat
-           [BIN.fromInt bin_el_8 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_9 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_10 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_11 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_12 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_13 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_14 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_15 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_16 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_17 (toErl 8) 1 BIN.Big])
-  in let tup_el_20 = ErlangBinary (BIN.concat [])
-  in let tup_el_21 = ErlangBinary (BIN.concat [])
-  in let tup_el_23 = ErlangBinary (BIN.concat [])
-  in let tup_el_24 = ErlangBinary (BIN.concat [])
+        (BIN.fromInts (toErl "DUMMY CODE") (toErl 8) 1 BIN.Big)
+  in let tup_el_10 = ErlangBinary (BIN.concat [])
+  in let tup_el_11 = ErlangBinary (BIN.concat [])
+  in let tup_el_13 = ErlangBinary (BIN.concat [])
+  in let tup_el_14 = ErlangBinary (BIN.concat [])
   in let
-    head_19 =
+    head_9 =
       ErlangTuple
-        [tup_el_20, tup_el_21, ErlangAtom "false", tup_el_23, tup_el_24]
-  in let bin_el_27 = toErl 51
-  in let bin_el_28 = toErl 46
-  in let bin_el_29 = toErl 49
-  in let bin_el_30 = toErl 46
-  in let bin_el_31 = toErl 52
+        [tup_el_10, tup_el_11, ErlangAtom "false", tup_el_13, tup_el_14]
   in let
-    val_26 =
-      ErlangBinary
-        (BIN.concat
-           [BIN.fromInt bin_el_27 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_28 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_29 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_30 (toErl 8) 1 BIN.Big,
-            BIN.fromInt bin_el_31 (toErl 8) 1 BIN.Big])
-  in let val_32 = toErl "contract Foo = ..."
+    val_16 =
+      ErlangBinary (BIN.fromInts (toErl "3.1.4") (toErl 8) 1 BIN.Big)
+  in let val_17 = toErl "contract Foo = ..."
   in let
     arg_1 =
       ErlangMap
         (Map.fromFoldable
            [DT.Tuple (ErlangAtom "byte_code") val_7,
             DT.Tuple (ErlangAtom "type_info")
-              (ErlangCons head_19 ErlangEmptyList),
-            DT.Tuple (ErlangAtom "compiler_version") val_26,
-            DT.Tuple (ErlangAtom "contract_source") val_32,
+              (ErlangCons head_9 ErlangEmptyList),
+            DT.Tuple (ErlangAtom "compiler_version") val_16,
+            DT.Tuple (ErlangAtom "contract_source") val_17,
             DT.Tuple (ErlangAtom "payable") (ErlangAtom "true")])
-  in let arg_34 = toErl 3
+  in let arg_19 = toErl 3
   in let
     arg_0 =
       BIF.do_remote_fun_call "Aeser.Contract.Code"
-        "erlps__serialize__2" [arg_1, arg_34]
+        "erlps__serialize__2" [arg_1, arg_19]
   in
     BIF.do_remote_fun_call "Aeser.Contract.Code"
       "erlps__deserialize__1" [arg_0]
 erlps__vsn_3_test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 0 erlps__vsn_3_test__0) args
 
 erlps__test__0 :: ErlangFun
 erlps__test__0 [] =
   BIF.do_remote_fun_call "Eunit" "erlps__test__1"
     [ErlangAtom "aeser_contract_code_tests"]
 erlps__test__0 args =
-  EXC.badarity (ErlangFun 0 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 0 erlps__test__0) args

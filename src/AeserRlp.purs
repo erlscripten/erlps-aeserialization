@@ -25,8 +25,7 @@ erlps__encode__1 :: ErlangFun
 erlps__encode__1 [x_0] = erlps__encode__2 [x_0, ErlangEmptyList]
 erlps__encode__1 [arg_3] = EXC.function_clause unit
 erlps__encode__1 args =
-  EXC.badarity (ErlangFun 1 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 1 erlps__encode__1) args
 
 erlps__encode__2 :: ErlangFun
 erlps__encode__2 [x_4@(ErlangBinary binSeg_0), _opts_5]
@@ -36,9 +35,7 @@ erlps__encode__2 [x_4@(ErlangBinary binSeg_0), _opts_5]
   , BIN.empty bin_2
   , weakLeq b_3 (toErl 127) =
   x_4
-erlps__encode__2 [x_0, _opts_1]
-  | ((ErlangAtom "true") ==
-       (falsifyErrors (\ _ -> BIF.erlang__is_binary__1 [x_0]))) =
+erlps__encode__2 [x_0, _opts_1] | isEBinary x_0 =
   let arg_2 = toErl 128
   in erlps__add_size__2 [arg_2, x_0]
 erlps__encode__2 [l_0, opts_1] | isEList l_0 =
@@ -58,17 +55,16 @@ erlps__encode__2 [l_0, opts_1] | isEList l_0 =
   in erlps__add_size__2 [arg_10, bytearray_9]
 erlps__encode__2 [arg_12, arg_13] = EXC.function_clause unit
 erlps__encode__2 args =
-  EXC.badarity (ErlangFun 2 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 2 erlps__encode__2) args
 
 erlps__add_size__2 :: ErlangFun
 erlps__add_size__2 [offset_0, x_1]
-  | ((ErlangAtom "true") ==
-       (falsifyErrors
-          (\ _ ->
-             let    lop_7 = BIF.erlang__byte_size__1 [x_1]
-             in let rop_9 = toErl 55
-             in BIF.erlang__op_lesserEq [lop_7, rop_9]))) =
+  | (ErlangAtom "true") ==
+      (falsifyErrors
+         (\ _ ->
+            let    lop_7 = BIF.erlang__byte_size__1 [x_1]
+            in let rop_9 = toErl 55
+            in BIF.erlang__op_lesserEq [lop_7, rop_9])) =
   let    rop_4 = BIF.erlang__byte_size__1 [x_1]
   in let bin_el_2 = BIF.erlang__op_plus [offset_0, rop_4]
   in
@@ -76,9 +72,7 @@ erlps__add_size__2 [offset_0, x_1]
       (BIN.concat
          [BIN.fromInt bin_el_2 (toErl 8) 1 BIN.Big,
           BIN.binPrefix x_1 (BIN.packedSize x_1) 8])
-erlps__add_size__2 [offset_0, x_1]
-  | ((ErlangAtom "true") ==
-       (falsifyErrors (\ _ -> BIF.erlang__is_binary__1 [x_1]))) =
+erlps__add_size__2 [offset_0, x_1] | isEBinary x_1 =
   let    arg_2 = BIF.erlang__byte_size__1 [x_1]
   in let sizebin_4 = BIF.binary__encode_unsigned__1 [arg_2]
   in let lop_6 = toErl 55
@@ -97,25 +91,24 @@ erlps__add_size__2 [offset_0, x_1]
               BIN.binPrefix sizebin_4 (BIN.packedSize sizebin_4) 8,
               BIN.binPrefix x_1 (BIN.packedSize x_1) 8])
       _ -> EXC.badmatch matchExpr_13
-erlps__add_size__2 [arg_18, arg_19] = EXC.function_clause unit
+erlps__add_size__2 [arg_17, arg_18] = EXC.function_clause unit
 erlps__add_size__2 args =
-  EXC.badarity (ErlangFun 2 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 2 erlps__add_size__2) args
 
 erlps__decode__1 :: ErlangFun
 erlps__decode__1 [bin_0]
-  | ((ErlangAtom "true") ==
-       (falsifyErrors
-          (\ _ ->
-             let lop_12 = BIF.erlang__is_binary__1 [bin_0]
-             in
-               case lop_12 of
-                 (ErlangAtom "false") -> ErlangAtom "false"
-                 (ErlangAtom "true") ->
-                   let    lop_14 = BIF.erlang__byte_size__1 [bin_0]
-                   in let rop_16 = toErl 0
-                   in BIF.erlang__op_greater [lop_14, rop_16]
-                 _ -> EXC.badarg1 lop_12))) =
+  | (ErlangAtom "true") ==
+      (falsifyErrors
+         (\ _ ->
+            let lop_12 = BIF.erlang__is_binary__1 [bin_0]
+            in
+              case lop_12 of
+                (ErlangAtom "false") -> ErlangAtom "false"
+                (ErlangAtom "true") ->
+                  let    lop_14 = BIF.erlang__byte_size__1 [bin_0]
+                  in let rop_16 = toErl 0
+                  in BIF.erlang__op_greater [lop_14, rop_16]
+                _ -> EXC.badarg1 lop_12)) =
   let case_1 = erlps__decode_one__1 [bin_0]
   in
     case case_1 of
@@ -129,8 +122,7 @@ erlps__decode__1 [bin_0]
       something_else -> EXC.case_clause something_else
 erlps__decode__1 [arg_17] = EXC.function_clause unit
 erlps__decode__1 args =
-  EXC.badarity (ErlangFun 1 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 1 erlps__decode__1) args
 
 erlps__decode_one__1 :: ErlangFun
 erlps__decode_one__1 [(ErlangBinary binSeg_0)]
@@ -184,8 +176,7 @@ erlps__decode_one__1 [b_1@(ErlangBinary binSeg_0)] =
       _ -> EXC.badmatch matchExpr_6
 erlps__decode_one__1 [arg_18] = EXC.function_clause unit
 erlps__decode_one__1 args =
-  EXC.badarity (ErlangFun 1 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 1 erlps__decode_one__1) args
 
 erlps__decode_size__2 :: ErlangFun
 erlps__decode_size__2 [(ErlangBinary binSeg_0), offset_7]
@@ -195,12 +186,12 @@ erlps__decode_size__2 [(ErlangBinary binSeg_0), offset_7]
   , (ErlangInt size_4) <- (BIN.size bin_2)
   , (BIN.Ok b_6 bin_5) <- (BIN.chopBin bin_2 size_4 8)
   , BIN.empty bin_5
-  , ((ErlangAtom "true") ==
-       (falsifyErrors
-          (\ _ ->
-             let    rop_15 = toErl 55
-             in let rop_13 = BIF.erlang__op_plus [offset_7, rop_15]
-             in BIF.erlang__op_lesserEq [l_3, rop_13]))) =
+  , (ErlangAtom "true") ==
+      (falsifyErrors
+         (\ _ ->
+            let    rop_15 = toErl 55
+            in let rop_13 = BIF.erlang__op_plus [offset_7, rop_15]
+            in BIF.erlang__op_lesserEq [l_3, rop_13])) =
   let tup_el_8 = BIF.erlang__op_minus [l_3, offset_7]
   in ErlangTuple [tup_el_8, b_6]
 erlps__decode_size__2 [(ErlangBinary binSeg_0), _offset_6]
@@ -210,7 +201,7 @@ erlps__decode_size__2 [(ErlangBinary binSeg_0), _offset_6]
   , (ErlangInt size_3) <- (toErl 8)
   , (BIN.Ok (ErlangInt num_5) bin_4) <-
       (BIN.chopInt bin_2 size_3 1 BIN.Big BIN.Unsigned)
-  , ((ErlangInt num_5) == (toErl 0)) =
+  , (ErlangInt num_5) == (toErl 0) =
   BIF.erlang__error__1 [ErlangAtom "leading_zeroes_in_size"]
 erlps__decode_size__2 [(ErlangBinary binSeg_0), offset_7]
   | (ErlangInt size_1) <- (toErl 8)
@@ -236,8 +227,7 @@ erlps__decode_size__2 [(ErlangBinary binSeg_0), offset_7]
       _ -> EXC.badmatch b_6
 erlps__decode_size__2 [arg_23, arg_24] = EXC.function_clause unit
 erlps__decode_size__2 args =
-  EXC.badarity (ErlangFun 2 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 2 erlps__decode_size__2) args
 
 erlps__decode_list__1 :: ErlangFun
 erlps__decode_list__1 [(ErlangBinary binEnd_0)]
@@ -253,5 +243,4 @@ erlps__decode_list__1 [b_0] =
       _ -> EXC.badmatch matchExpr_4
 erlps__decode_list__1 [arg_8] = EXC.function_clause unit
 erlps__decode_list__1 args =
-  EXC.badarity (ErlangFun 1 (\ _ -> ErlangAtom "purs_tco_sucks"))
-    args
+  EXC.badarity (ErlangFun 1 erlps__decode_list__1) args

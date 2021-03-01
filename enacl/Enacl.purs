@@ -11,5 +11,5 @@ foreign import generichashImpl :: Int -> Buffer -> Buffer
 
 erlps__generichash__2 [ErlangInt bi, ErlangBinary bin]
  | DM.Just i <- bigIntToInt bi
-  = ErlangBinary (generichashImpl i bin)
+  = ErlangTuple [ErlangAtom "ok", ErlangBinary (generichashImpl i bin)]
 erlps__generichash__2 _ = EXC.badarg unit

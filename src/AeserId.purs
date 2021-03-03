@@ -24,55 +24,23 @@ import Partial.Unsafe (unsafePartial)
 
 erlps__create__2 :: ErlangFun
 erlps__create__2 [tag_0, val_1]
-  | (ErlangAtom "true") ==
-      (falsifyErrors
-         (\ _ ->
-            let   
-              lop_9 = BIF.erlang__op_exactEq [tag_0, ErlangAtom "account"]
-            in let
-              lop_8 =
-                case lop_9 of
-                  (ErlangAtom "true") -> ErlangAtom "true"
-                  (ErlangAtom "false") ->
-                    BIF.erlang__op_exactEq [tag_0, ErlangAtom "oracle"]
-                  _ -> EXC.badarg1 lop_9
-            in let
-              lop_7 =
-                case lop_8 of
-                  (ErlangAtom "true") -> ErlangAtom "true"
-                  (ErlangAtom "false") ->
-                    BIF.erlang__op_exactEq [tag_0, ErlangAtom "name"]
-                  _ -> EXC.badarg1 lop_8
-            in let
-              lop_6 =
-                case lop_7 of
-                  (ErlangAtom "true") -> ErlangAtom "true"
-                  (ErlangAtom "false") ->
-                    BIF.erlang__op_exactEq [tag_0, ErlangAtom "commitment"]
-                  _ -> EXC.badarg1 lop_7
-            in let
-              lop_5 =
-                case lop_6 of
-                  (ErlangAtom "true") -> ErlangAtom "true"
-                  (ErlangAtom "false") ->
-                    BIF.erlang__op_exactEq [tag_0, ErlangAtom "contract"]
-                  _ -> EXC.badarg1 lop_6
-            in
-              case lop_5 of
-                (ErlangAtom "true") -> ErlangAtom "true"
-                (ErlangAtom "false") ->
-                  let
-                    lop_20 =
-                      BIF.erlang__op_exactEq [tag_0, ErlangAtom "channel"]
-                  in
-                    case lop_20 of
-                      (ErlangAtom "false") -> ErlangAtom "false"
-                      (ErlangAtom "true") ->
-                        let    lop_23 = BIF.erlang__byte_size__1 [val_1]
-                        in let rop_25 = toErl 32
-                        in BIF.erlang__op_exactEq [lop_23, rop_25]
-                      _ -> EXC.badarg1 lop_20
-                _ -> EXC.badarg1 lop_5)) =
+  | ((((((==) tag_0 (ErlangAtom "account")) ||
+          ((==) tag_0 (ErlangAtom "oracle"))) ||
+         ((==) tag_0 (ErlangAtom "name"))) ||
+        ((==) tag_0 (ErlangAtom "commitment"))) ||
+       ((==) tag_0 (ErlangAtom "contract"))) ||
+      ((ErlangAtom "true") ==
+         (falsifyErrors
+            (\ _ ->
+               let lop_5 = BIF.erlang__op_exactEq [tag_0, ErlangAtom "channel"]
+               in
+                 case lop_5 of
+                   (ErlangAtom "false") -> ErlangAtom "false"
+                   (ErlangAtom "true") ->
+                     let    lop_8 = BIF.erlang__byte_size__1 [val_1]
+                     in let rop_10 = toErl 32
+                     in BIF.erlang__op_exactEq [lop_8, rop_10]
+                   _ -> EXC.badarg1 lop_5))) =
   ErlangTuple [ErlangAtom "id", tag_0, val_1]
 erlps__create__2 [tag_0, val_1]
   | (ErlangAtom "true") ==
@@ -115,57 +83,25 @@ erlps__specialize__2 [(ErlangTuple [(ErlangAtom "id"), tag_0,
                                     val_1]),
                       tag_2]
   | tag_2 == tag_0
-  , (ErlangAtom "true") ==
-      (falsifyErrors
-         (\ _ ->
-            let   
-              lop_7 = BIF.erlang__op_exactEq [tag_0, ErlangAtom "account"]
-            in let
-              lop_6 =
-                case lop_7 of
-                  (ErlangAtom "true") -> ErlangAtom "true"
-                  (ErlangAtom "false") ->
-                    BIF.erlang__op_exactEq [tag_0, ErlangAtom "oracle"]
-                  _ -> EXC.badarg1 lop_7
-            in let
-              lop_5 =
-                case lop_6 of
-                  (ErlangAtom "true") -> ErlangAtom "true"
-                  (ErlangAtom "false") ->
-                    BIF.erlang__op_exactEq [tag_0, ErlangAtom "name"]
-                  _ -> EXC.badarg1 lop_6
-            in let
-              lop_4 =
-                case lop_5 of
-                  (ErlangAtom "true") -> ErlangAtom "true"
-                  (ErlangAtom "false") ->
-                    BIF.erlang__op_exactEq [tag_0, ErlangAtom "commitment"]
-                  _ -> EXC.badarg1 lop_5
-            in let
-              lop_3 =
-                case lop_4 of
-                  (ErlangAtom "true") -> ErlangAtom "true"
-                  (ErlangAtom "false") ->
-                    BIF.erlang__op_exactEq [tag_0, ErlangAtom "contract"]
-                  _ -> EXC.badarg1 lop_4
-            in
-              case lop_3 of
-                (ErlangAtom "true") -> ErlangAtom "true"
-                (ErlangAtom "false") ->
-                  let
-                    lop_18 =
-                      BIF.erlang__op_exactEq [tag_0, ErlangAtom "channel"]
-                  in
-                    case lop_18 of
-                      (ErlangAtom "false") -> ErlangAtom "false"
-                      (ErlangAtom "true") ->
-                        let    lop_21 = BIF.erlang__byte_size__1 [val_1]
-                        in let rop_23 = toErl 32
-                        in BIF.erlang__op_exactEq [lop_21, rop_23]
-                      _ -> EXC.badarg1 lop_18
-                _ -> EXC.badarg1 lop_3)) =
+  , ((((((==) tag_0 (ErlangAtom "account")) ||
+          ((==) tag_0 (ErlangAtom "oracle"))) ||
+         ((==) tag_0 (ErlangAtom "name"))) ||
+        ((==) tag_0 (ErlangAtom "commitment"))) ||
+       ((==) tag_0 (ErlangAtom "contract"))) ||
+      ((ErlangAtom "true") ==
+         (falsifyErrors
+            (\ _ ->
+               let lop_3 = BIF.erlang__op_exactEq [tag_0, ErlangAtom "channel"]
+               in
+                 case lop_3 of
+                   (ErlangAtom "false") -> ErlangAtom "false"
+                   (ErlangAtom "true") ->
+                     let    lop_6 = BIF.erlang__byte_size__1 [val_1]
+                     in let rop_8 = toErl 32
+                     in BIF.erlang__op_exactEq [lop_6, rop_8]
+                   _ -> EXC.badarg1 lop_3))) =
   val_1
-erlps__specialize__2 [arg_24, arg_25] = EXC.function_clause unit
+erlps__specialize__2 [arg_9, arg_10] = EXC.function_clause unit
 erlps__specialize__2 args =
   EXC.badarity (ErlangFun 2 erlps__specialize__2) args
 
